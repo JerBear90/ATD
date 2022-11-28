@@ -1,0 +1,31 @@
+<!DOCTYPE html>   
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Your Title</title>
+	<script type='text/javascript' src='https://d36b03yirdy1u9.cloudfront.net/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+</head>
+<body>
+	
+
+
+<form method="post" action="https://www.autotransportdirect.com/wp-content/themes/atdv2/testsubmit.html" id="mainform">
+
+<button type="submit" class="goonbutton">
+    Complete Order&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-right"></i>
+</button>
+
+</form>
+<script>
+jQuery('#mainform').submit(function(e) {
+	e.preventDefault();
+	jQuery(this).find("button[type='submit']").prop('disabled',true);
+	jQuery(this).find("button[type='submit']").text('Please Wait...');
+	document.getElementById("mainform").submit();
+});
+</script>
+
+
+	
+</body>
+</html>

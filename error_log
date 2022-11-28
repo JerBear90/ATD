@@ -1,0 +1,70 @@
+[09-Jun-2021 23:59:16 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[09-Jun-2021 23:59:16 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 00:18:59 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 00:18:59 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 00:19:09 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 00:19:09 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 00:22:47 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 00:22:47 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 00:22:59 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 00:22:59 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 01:01:50 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 01:01:50 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 01:24:24 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 01:24:24 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 01:24:38 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 01:24:38 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 01:24:38 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 01:24:39 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 01:24:50 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 01:24:50 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 10:08:51 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 10:08:51 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 15:00:01 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 15:00:01 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 15:00:04 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 15:00:04 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 15:00:05 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 15:00:05 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 15:00:11 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 15:00:11 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 15:00:17 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 15:00:17 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 15:00:23 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 15:00:23 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 18:18:28 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 18:18:28 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 20:08:25 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 20:08:25 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 20:08:29 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 20:08:29 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 20:20:22 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 20:20:22 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 21:18:15 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 21:18:15 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 21:18:28 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 21:18:28 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 23:30:11 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 23:30:11 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 23:30:27 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 23:30:27 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 23:30:38 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 23:30:38 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[10-Jun-2021 23:30:46 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[10-Jun-2021 23:30:46 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[11-Jun-2021 00:31:15 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[11-Jun-2021 00:31:15 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[11-Jun-2021 00:31:30 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[11-Jun-2021 00:31:30 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[11-Jun-2021 00:43:22 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[11-Jun-2021 00:43:22 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[11-Jun-2021 00:43:31 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[11-Jun-2021 00:43:31 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[11-Jun-2021 00:43:46 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[11-Jun-2021 00:43:46 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[11-Jun-2021 00:43:55 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[11-Jun-2021 00:43:55 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[11-Jun-2021 00:56:47 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[11-Jun-2021 00:56:47 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
+[11-Jun-2021 00:57:03 UTC] PHP Deprecated:  Function get_magic_quotes_gpc() is deprecated in /home/atd/public_html/includes/magicquotes.inc.php on line 2
+[11-Jun-2021 00:57:03 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/atd/public_html/includes/db.inc.php on line 2
