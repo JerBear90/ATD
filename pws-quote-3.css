@@ -1,0 +1,656 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
+	.rout_txt
+	{
+		font-weight:bold !important;
+	}
+
+body{
+    font-family: "Poppins";
+}
+
+.card-container{
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.right-banner
+{
+    text-align:center;
+}
+
+.right-banner img
+{
+    width: 75%;
+    border-radius: 20px;
+}
+
+.inner_container
+{
+        display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+}
+
+.point1
+{
+    background-color: orange;
+    border-radius: 50px;
+    padding: 8px 29px;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: inline;
+}
+
+
+.banner {
+    width: 100%;
+    display: flex;
+    /*height: 657px;*/
+    height: 370px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sec1 {
+    width: 100%;
+    background-color: #f1f1f1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.spn{
+
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #333;
+    margin: 20px 0 10px;
+}
+
+
+.sec2 {
+    background-image: url(https://www.autotransportdirect.com/wp-content/uploads/2022/07/getquotebanner1.jpg);
+    width: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display:none;
+}
+
+.but{
+    font-size: 15px;
+    border: 1px solid rgb(255 255 255);
+    font-weight: 700;
+    color: rgb(255 255 255);
+    padding: 18px 57px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 35px;
+    border-radius: 43px;
+    display:none;
+}
+
+.but:hover
+{
+    color: #0b9519;
+    text-decoration: none;
+    background-color: #fff;
+    transition: inherit;
+}
+
+.head{
+    font-family: "Poppins";
+    color:#fff;
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 3.5vw;
+    font-weight: 300;
+    line-height: 66px;
+    margin: 0px;
+    padding-top: 20px;
+}
+
+.textpara{
+    font-size: 18px;
+    color: #333;
+    font-weight: 400;
+    margin-top: 20px;
+    line-height: 28px;
+    letter-spacing: normal;
+    margin: 20px 0px 0px 0px;
+}
+
+
+
+.sec1 .display
+{
+        padding: 0 17%;
+}
+
+.section.operations
+{
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+.hours_oper
+{
+     text-align: center;
+    color: #283337;
+    font-family: "Poppins", Sans-serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 45px;
+    margin-bottom: 20px !important;
+    padding-bottom: 0px;
+}
+
+.hours, .cards
+{
+    text-align: center;
+}
+
+.cards_img
+{
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 40%;
+    margin: 20px auto 0 auto;
+    grid-column-gap: 30px;
+    align-items: center;
+}
+
+
+.bottom_sec_main
+{
+    background-color: #f1f1f1;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.bottom_sec
+{
+    width: 90%;
+    margin: 20px auto;
+}
+
+.bottom_sec_inner
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+}
+
+.bottom_services
+{
+    background-color: #f3f3f3;
+    padding: 30px 0;
+}
+
+.inner_Serv
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.inner_Serv div
+{
+    font-weight: 500;
+    font-family: "Poppins", Sans-serif;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: .5px;
+}
+
+.sec .spn 
+{
+    margin-bottom: 3px;
+    font-size: 20px;
+    color:#fff;
+}
+
+.sec h1.head 
+{
+    margin-top: 0px;
+
+     font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff !important;
+}
+
+.sec .para
+{
+     font-size: 20px;
+    color: #fff;
+}
+
+
+
+.custom-separator
+{
+    width: 5rem;
+    height: 6px;
+    border-radius: 1rem;
+  background-color: #333;
+    margin: 0 auto 30px auto;
+}
+
+.custom-separator.bg-bas
+{
+     background-color: #0057b1;
+}
+
+.custom-separator.bg-rec
+{
+     background-color: #0057b1;
+}
+
+.custom-separator.bg-fin
+{
+     background-color: #0057b1;
+}
+
+
+.logos-sectio
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.logos-sectio h2
+{
+    text-align: center;
+    color: #283337;
+    font-family: "Poppins", Sans-serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 45px;
+    margin-bottom: 0px !important;
+        padding-bottom: 0px;
+}
+
+.logos-sectio .logos_inner
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 40px;
+    align-items: center;
+    width: 60%;
+    margin: 55px auto 30px auto;
+}
+
+.logos-sectio .logos_inner .log
+{
+    text-align: center;
+}
+
+.logos-sectio .logos_inner .log img
+{
+    width:55%;
+}
+
+
+.section-head
+{
+    color: #283337;
+    font-family: "Poppins", Sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 45px;
+    text-align: center;
+}
+
+.section-head-main
+{
+    /*margin: 20px 0 10px;
+    background-color: #f1f1f1;
+    padding: 25px;*/
+}
+
+.package_section
+{
+    float: left;
+    width: 100%;
+    margin-top: 0px;
+    padding-top: 80px;
+    padding-bottom: 65px;
+   /* background: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+    background: linear-gradient(to right, #0083B0, #00B4DB);*/
+    background: #0057b1;
+}
+
+.package_section .levelofservice.recommend 
+{
+    border-top: 5px solid #107410;
+    padding-top: 40px !important;
+    margin-top: -25px;
+}
+
+.package_section .levelofservice
+{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    background-color: #fff!important;
+}
+
+
+.pricerow1
+{
+    color: #0b9519;
+    font-weight: 300;
+    font-family: "Poppins", Sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.pricerow
+{
+    color: #514B64;
+    margin-top: 8px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-family: "Poppins", Sans-serif;
+    font-size: 30px;
+}
+
+.sectionn_note
+{
+    float: left;
+    margin-top: 35px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: .5px;
+    text-align: center;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+p.hours 
+{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+.colm.colm12.shippinginfodata {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.colm.colm12.shippinginfodata strong {
+    padding: 3px;
+    line-height: 26px;
+}
+
+div#shipping_more_details {
+    background-image: url(https://www.autotransportdirect.com/wp-content/uploads/2022/07/map-location.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    object-fit: cover;
+    background-position: right;
+    margin-bottom:0px;
+    background-color: #eee;
+    margin-top:  -40px;
+}
+
+#displaybalancestandard , #displayexpeditedprice , #displayexpeditedprice
+{
+    color: #514B64;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    font-size: 65px;
+}
+
+.p_description p {
+    color: #514B64;
+    font-family: "Poppins", Sans-serif;
+    margin-bottom: 0px;
+    /* text-align: left; */
+    font-size: 16px;
+}
+
+.due_div
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    /* font-family: "Poppins", Sans-serif; */
+    color: #514B64;
+    font-size: 20px;
+}
+
+
+#map1, #map2 {
+    margin: 10px 0 10px 0;
+    border: 1px solid #666;
+    width: 100%;
+    height: 220px;
+}
+.mapmsg {
+    width: 100%;
+    margin-bottom: 10px;
+    color: #000099;
+    font-size: 15px;
+}
+
+.ui-widget-overlay {
+    opacity: 0.6;
+}
+
+.shipping-details{
+    padding-bottom: 20px;
+}
+
+
+
+.setupship {
+    margin-top: 10px;
+
+/*     padding: 50px 0 0; */
+}
+
+.setupshipcol {
+    text-align: center;
+    font-size: 16px;
+    padding: 0px 40px !important;
+/*     border-right: 1px solid #eee; */
+}
+
+/*
+.setupshipcol:first-child {
+    border-left: 1px solid #eee;
+}
+*/
+
+.setupship {
+    text-align: center;
+}
+
+.pricerow {
+    /*font-size: 23px;*/
+    line-height: 15px;
+}
+
+.setupshipcol p {
+    margin: 10px 0 !important;
+}
+
+.setupshipment {
+    margin: 3px 0 0 0;
+    font-weight: bold;
+}
+
+.submitbutton3 {
+    /*background: #FFCC00;
+    border-radius: 5px;
+    color: #000 !important;
+    font-family: "Aldrich", Sans-serif !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    border: 0;
+    padding: 8px 40px;*/
+    
+    color: #333 !important;
+    background-color: orange;
+       border: 2px solid #cf8601;
+    font-size: 14px;
+    font-family: "Poppins", Sans-serif !important;
+    border-radius: 50px;
+    letter-spacing: .5px;
+    width: auto !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 8px 40px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.submitbutton3:hover {
+    background: #0b9519 !important;
+    border: 2px solid #05640e;
+    color:#fff !important;
+}
+
+.levelofservice {
+   padding: 20px 20px 25px 20px  !important;
+    background: #333;
+    margin: 0 8px;
+    width: 32% !important;
+    text-align: center;
+    font-size: 14px;
+    color: #f1f1f1;
+    font-weight: 400;
+    border-radius: 20px;
+}
+
+
+
+.levelofservice:last-child {
+    margin-right: 0 !important
+}
+
+.levelofservice:first-child {
+    margin-left: 0 !important
+}
+
+.pricing {
+    color: #424242;
+    font-size:40px;
+    line-height: 50px;
+    font-weight: 400;
+}
+
+.pricing sup {
+    font-size: 50%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: -0.7em;
+    color: #0b9519;
+}
+
+
+@media (max-width: 600px) {
+    .smart-forms .frm-row .colm {
+        width: 100% !important;
+    }
+    
+    .levelofservice:last-child {
+        margin-right: 0 !important
+    }
+    
+    .levelofservice:first-child {
+        margin-left: 0 !important
+    }
+    
+    .levelofservice {
+        margin: 0 0 20px;
+    }
+    
+    body .shippinginfo {
+        margin: 0 !important;
+    }
+}
+
+
+.carinfo {
+    max-width: 538px;
+    border: 1px solid #cecece;
+    padding: 3rem;
+    border-radius: 5px;
+    
+/*
+    border: 0.1rem solid #e6e7eb;
+    border-radius: 0.3rem;
+    box-shadow: 0 0.2rem 0.4rem 0 #9d9ea3;
+    box-shadow: 0 0.2rem 0.4rem 0 rgba(0,0,0,0.06);
+    
+    background: #f3f4f8;
+*/
+}
+
+.shippinginfodata {
+    margin-bottom: 13px;
+}
+
+a.quote-btn {
+    color: #fff !important;
+    background-color: #0062cc;
+    border: 2px solid #03468f;
+    font-size: 14px;
+    font-family: "Poppins", Sans-serif !important;
+    border-radius: 50px;
+    letter-spacing: .5px;
+    width: auto !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 8px 40px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    display: block;
+    margin-bottom: 10px;
+}
+
+@media (max-width:768px) {
+
+    .smart-forms .frm-row .colm.ipad {
+        width:100%;
+        float:none;
+        padding:0;
+    }
+    
+}   
+
+.shipping-details-header{
+    margin-top: 40px;
+    padding-bottom: 30px;
+}
+
+
+select#honorquoteprice {
+                                padding-top: 10px;
+                                font-size: 15px;
+                                width: 125px;
+                            }
+.embed-container { border:1px solid #ccc; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }                            

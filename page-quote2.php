@@ -23,19 +23,25 @@ get_header(); ?>
                                     if ($_GET['step']=='1b') {
                                         //Show search results
                                 	    the_content();
-                                    } elseif ($_GET['step']=='2') {
+                                    } elseif ($_GET['step']=='1c') {
                                         //Show detail page
+                                        //
+//                                              echo "<pre>";
+// 	print_r($_POST);
+// 	echo "</pre>";
+// 	exit();
                                         include($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/atdv2/quote-2.php');
-                                    } elseif ($_GET['step']=='3') {
+                                    } 
+                                    elseif ($_GET['step']=='1') {
                                         //Show detail page
                                         include($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/atdv2/pws-quote-3.php');
-                                    } elseif ($_GET['step']=='4') {
+                                    } elseif ($_GET['step']=='2') {
                                         //Show detail page
                                         include($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/atdv2/pws-quote-4.php');
-                                    } elseif ($_GET['step']=='5') {
+                                    } elseif ($_GET['step']=='3') {
                                         //Show detail page
                                         include($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/atdv2/pws-quote-5.php');
-                                    } elseif ($_GET['step']=='6') {
+                                    } elseif ($_GET['step']=='4') {
                                         //Show detail page
                                         include($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/atdv2/pws-quote-6.php');
                                     } elseif ($_GET['step']=='7') {

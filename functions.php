@@ -105,7 +105,7 @@ function session($var)
 function postdb($var)
 
 {
-
+	
   if(isset($_POST[$var]))
 
   return sanitize_text_field($_POST[$var]);
@@ -2547,47 +2547,47 @@ function GetQuote16($auto_year,$auto_make,$auto_model,$shippingfromzip,$shipping
 
     //Get Vehicle from database and apply the multiplier
 
-	$sql = "select * from automobiles where auto_make = '$auto_make' and auto_model = '$auto_model' and display=1";
+  $sql = "select * from automobiles where auto_make = '$auto_make' and auto_model = '$auto_model' and display=1";
 
-	$GetAuto = $wpdb->get_row($sql,ARRAY_A);
+  $GetAuto = $wpdb->get_row($sql,ARRAY_A);
 
-	if ($wpdb->num_rows == 0) {
+  if ($wpdb->num_rows == 0) {
 
-		$auto_priceadjustment = 1;
+    $auto_priceadjustment = 1;
 
-		$auto_addon = 0;
+    $auto_addon = 0;
 
-	} else {
+  } else {
 
-    	$auto_priceadjustment = $GetAuto['auto_priceadjustment'];
+      $auto_priceadjustment = $GetAuto['auto_priceadjustment'];
 
-		$auto_addon = $GetAuto['addon'];
+    $auto_addon = $GetAuto['addon'];
 
     }
 
 
 
-	//Get Vehicle Year Multiplier from database
+  //Get Vehicle Year Multiplier from database
 
-	$sql = "select multiplier,flatrate_low,flatrate_high from year_multiplier where auto_year = '$auto_year'";
+  $sql = "select multiplier,flatrate_low,flatrate_high from year_multiplier where auto_year = '$auto_year'";
 
-	$GetYear = $wpdb->get_row($sql,ARRAY_A);
+  $GetYear = $wpdb->get_row($sql,ARRAY_A);
 
     if ($wpdb->num_rows == 0) {
 
-		$year_multiplier = 1;
+    $year_multiplier = 1;
 
-		$year_flatrate_low = 0;
+    $year_flatrate_low = 0;
 
-		$year_flatrate_high = 0;
+    $year_flatrate_high = 0;
 
-	} else {
+  } else {
 
-    	$year_multiplier = $GetYear['multiplier'];
+      $year_multiplier = $GetYear['multiplier'];
 
-    	$year_flatrate_low = $GetYear['flatrate_low'];
+      $year_flatrate_low = $GetYear['flatrate_low'];
 
-    	$year_flatrate_high = $GetYear['flatrate_high'];
+      $year_flatrate_high = $GetYear['flatrate_high'];
 
     }
 
@@ -2597,41 +2597,41 @@ function GetQuote16($auto_year,$auto_make,$auto_model,$shippingfromzip,$shipping
 
 /*
 
-	if ($_SESSION['rep'] == "claydough") {
+  if ($_SESSION['rep'] == "claydough") {
 
-		$debug = 1;
+    $debug = 1;
 
-	}
+  }
 
 */
 
-	
+  
 
-	//$debug = 1;
+  //$debug = 1;
 
 
 
-	if ($debug == 1) {
+  if ($debug == 1) {
 
-    	echo "<div class='debuginfo'>";
+      echo "<div class='debuginfo'>";
 
-		echo "<b>$auto_make - $auto_model</b><br>";
+    echo "<b>$auto_make - $auto_model</b><br>";
 
-	}
+  }
 
-	
+  
 
-	
+  
 
-	
+  
 
-	$response = QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjustment,$auto_addon,$year_multiplier,$year_flatrate_low,$year_flatrate_high,$debug);
+  $response = QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjustment,$auto_addon,$year_multiplier,$year_flatrate_low,$year_flatrate_high,$debug);
 
-	
+  
 
-	
+  
 
-	return $response;
+  return $response;
 
 }  
 
@@ -2647,9 +2647,9 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
 
 
-	//1. Get the Distance between startzip and endzip
+  //1. Get the Distance between startzip and endzip
 
-	$totaldistance = getdistance($shippingfromzip,$shippingtozip);
+  $totaldistance = getdistance($shippingfromzip,$shippingtozip);
 
 
 
@@ -2661,21 +2661,21 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
         
 
-	//STATE: Get the state from the zip code
+  //STATE: Get the state from the zip code
 
-	$sql = "select State from zipcodesv2 where left(ZipCode,3) = '$shippingfromzip3' limit 0,1";
+  $sql = "select State from zipcodesv2 where left(ZipCode,3) = '$shippingfromzip3' limit 0,1";
 
-	$StartStateRs = $wpdb->get_row($sql,ARRAY_A);
+  $StartStateRs = $wpdb->get_row($sql,ARRAY_A);
 
-	$startstate = $StartStateRs['State'];
+  $startstate = $StartStateRs['State'];
 
 
 
-	$sql = "select State from zipcodesv2 where left(ZipCode,3) = '$shippingtozip3' limit 0,1";
+  $sql = "select State from zipcodesv2 where left(ZipCode,3) = '$shippingtozip3' limit 0,1";
 
-	$EndStateRs = $wpdb->get_row($sql,ARRAY_A);
+  $EndStateRs = $wpdb->get_row($sql,ARRAY_A);
 
-	$endstate = $EndStateRs['State'];
+  $endstate = $EndStateRs['State'];
 
 
 
@@ -2685,7 +2685,7 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
     $endstatevirgin = $endstate;    
 
-	$startstate = splitstate($startstate,$shippingfromzip);
+  $startstate = splitstate($startstate,$shippingfromzip);
 
     $endstate = splitstate($endstate,$shippingtozip);
 
@@ -2693,89 +2693,89 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
 
 
-	//2. Grab the flatrate and bymilerate from the database for the distance received
+  //2. Grab the flatrate and bymilerate from the database for the distance received
 
-	$sql = "select flatrate,bymilerate from pricing2 where milelow <= '$totaldistance' and milehigh >= '$totaldistance'";
+  $sql = "select * from pricing2 where milelow <= '$totaldistance' and milehigh >= '$totaldistance'";
 
-	$getrates = $wpdb->get_row($sql,ARRAY_A);
+  $getrates = $wpdb->get_row($sql,ARRAY_A);
+var_dump($getrates);
+  $flatrate = $getrates['flatrate'];
 
-	$flatrate = $getrates['flatrate'];
+  $bymilerate = $getrates['bymilerate'];
 
-	$bymilerate = $getrates['bymilerate'];
-
-	
-
-
+  
 
 
 
-	if (empty($flatrate) || $flatrate==0) {
-
-		$totalprice1 = $totaldistance * $bymilerate;
-
-		$totalprice0 = $totalprice1;
-
-		
-
-		$totalprice1 = $totalprice1 * $auto_priceadjustment;
-
-	    $totalprice1 = $totalprice1 + $auto_addon;
-
-	    	
 
 
+  if (empty($flatrate) || $flatrate==0) {
 
-	} else {
+    $totalprice1 = $totaldistance * $bymilerate;
 
-		$totalprice1 = $flatrate;
+    $totalprice0 = $totalprice1;
 
-		$totalprice0 = $totalprice1;
+    
 
-		
+    $totalprice1 = $totalprice1 * $auto_priceadjustment;
 
-		$totalprice1 = $totalprice1 * $auto_priceadjustment;
+      $totalprice1 = $totalprice1 + $auto_addon;
 
-	    $totalprice1 = $totalprice1 + $auto_addon;
+        
 
 
 
-	}
+  } else {
 
-	
+    $totalprice1 = $flatrate;
 
-	
+    $totalprice0 = $totalprice1;
+
+    
+
+    $totalprice1 = $totalprice1 * $auto_priceadjustment;
+
+      $totalprice1 = $totalprice1 + $auto_addon;
+
+
+
+  }
+
+  
+
+  
 
     //Year Multiplier/Flat Rate Added
 
     if($year_flatrate_low!=0 && $year_flatrate_high!=0) {
 
-		if ($totaldistance<1600) {
+    if ($totaldistance<1600) {
 
-    		$totalprice1 = $totalprice1 + $year_flatrate_low;
+        $totalprice1 = $totalprice1 + $year_flatrate_low;
 
-		} else {
+    } else {
 
-    		$totalprice1 = $totalprice1 + $year_flatrate_high;
+        $totalprice1 = $totalprice1 + $year_flatrate_high;
 
-		}
+    }
 
-	} else {
+  } else {
 
-	    $totalprice1 = $totalprice1 * $year_multiplier;
+      $totalprice1 = $totalprice1 * $year_multiplier;
 
-	}
+  }
 
-	
+  
 
-	$totalprice0 = number_format($totalprice0,2, '.', '');
+  $totalprice0 = number_format($totalprice0,2, '.', '');
 
-	$totalprice1 = number_format($totalprice1,2, '.', '');
+  $totalprice1 = number_format($totalprice1,2, '.', '');
 
-	
+  
 
 
 
-	//4. Check first X digits of zip code to make rate adjustments
+  //4. Check first X digits of zip code to make rate adjustments
 
     $shippingfromzip5 = substr($shippingfromzip,0,5);
 
@@ -2791,39 +2791,39 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
 
 
-	
+  
 
 
 
 
 
-	if($totaldistance > 0 && $totaldistance <= 499) {
+  if($totaldistance > 0 && $totaldistance <= 499) {
 
-		$currdistance = "Low";
+    $currdistance = "Low";
 
-	} elseif ($totaldistance >= 500 && $totaldistance <= 1199) {
+  } elseif ($totaldistance >= 500 && $totaldistance <= 1199) {
 
-		$currdistance = "Med";
+    $currdistance = "Med";
 
-	} elseif ($totaldistance >= 1200 && $totaldistance <= 1799) {
+  } elseif ($totaldistance >= 1200 && $totaldistance <= 1799) {
 
-		$currdistance = "Reg";
+    $currdistance = "Reg";
 
-	} elseif ($totaldistance >= 1800) {
+  } elseif ($totaldistance >= 1800) {
 
-		$currdistance = "High";
+    $currdistance = "High";
 
-	}
+  }
 
 
 
-	//Try 5 digits first
+  //Try 5 digits first
 
-	$sql = "select addon,nearcity,RatePerc_$currdistance as RatePerc from ziprateadjust where partialzip = '$shippingfromzip5'";
+  $sql = "select addon,nearcity,RatePerc_$currdistance as RatePerc from ziprateadjust where partialzip = '$shippingfromzip5'";
 
-	//echo $sql;
+  //echo $sql;
 
-	$getrateadjust = $wpdb->get_row($sql,ARRAY_A);
+  $getrateadjust = $wpdb->get_row($sql,ARRAY_A);
 
 
 
@@ -2831,17 +2831,17 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
         $origin_rateperc = 0;
 
-		$origin_match = 0;
+    $origin_match = 0;
 
-	} else {
+  } else {
 
-    	$origin_rateperc = $getrateadjust['RatePerc'];
+      $origin_rateperc = $getrateadjust['RatePerc'];
 
-		$origincity = $getrateadjust['nearcity'];
+    $origincity = $getrateadjust['nearcity'];
 
-		$origin_match = 1;
+    $origin_match = 1;
 
-	}
+  }
 
 
 
@@ -2849,29 +2849,29 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
     if ($origin_match == 0) {
 
-    	//Try 4 digits
+      //Try 4 digits
 
-    	$sql = "select addon,nearcity,RatePerc_$currdistance as RatePerc from ziprateadjust where partialzip = '$shippingfromzip4'";
+      $sql = "select addon,nearcity,RatePerc_$currdistance as RatePerc from ziprateadjust where partialzip = '$shippingfromzip4'";
 
-    	$getrateadjust = $wpdb->get_row($sql,ARRAY_A);
+      $getrateadjust = $wpdb->get_row($sql,ARRAY_A);
 
 
 
-    	if ($wpdb->num_rows == 0) {
+      if ($wpdb->num_rows == 0) {
 
-	        $origin_rateperc = 0;
+          $origin_rateperc = 0;
 
-			$origin_match = 0;
+      $origin_match = 0;
 
-		} else {
+    } else {
 
-	    	$origin_rateperc = $getrateadjust['RatePerc'];
+        $origin_rateperc = $getrateadjust['RatePerc'];
 
-			$origincity = $getrateadjust['nearcity'];
+      $origincity = $getrateadjust['nearcity'];
 
-			$origin_match = 1;
+      $origin_match = 1;
 
-		}
+    }
 
     }
 
@@ -2879,27 +2879,27 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
     if ($origin_match == 0) {
 
-    	$sql = "select addon,nearcity,RatePerc_$currdistance as RatePerc from ziprateadjust where partialzip = '$shippingfromzip3'";
+      $sql = "select addon,nearcity,RatePerc_$currdistance as RatePerc from ziprateadjust where partialzip = '$shippingfromzip3'";
 
-    	$getrateadjust = $wpdb->get_row($sql,ARRAY_A);
+      $getrateadjust = $wpdb->get_row($sql,ARRAY_A);
 
 
 
-    	if ($wpdb->num_rows == 0) {
+      if ($wpdb->num_rows == 0) {
 
-	        $origin_rateperc = 0;
+          $origin_rateperc = 0;
 
-			$origin_match = 0;
+      $origin_match = 0;
 
-		} else {
+    } else {
 
-	    	$origin_rateperc = $getrateadjust['RatePerc'];
+        $origin_rateperc = $getrateadjust['RatePerc'];
 
-			$origincity = $getrateadjust['nearcity'];
+      $origincity = $getrateadjust['nearcity'];
 
-			$origin_match = 1;
+      $origin_match = 1;
 
-		}
+    }
 
     }
 
@@ -2915,17 +2915,17 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
         $dest_rateperc = 0;
 
-		$dest_match = 0;
+    $dest_match = 0;
 
-	} else {
+  } else {
 
-    	$dest_rateperc = $getrateadjust['RatePerc'];
+      $dest_rateperc = $getrateadjust['RatePerc'];
 
-		$destcity = $getrateadjust['nearcity'];
+    $destcity = $getrateadjust['nearcity'];
 
-		$dest_match = 1;
+    $dest_match = 1;
 
-	}
+  }
 
 
 
@@ -2935,23 +2935,23 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
         $sql = "select addon,nearcity,RatePerc_$currdistance as RatePerc from ziprateadjust where partialzip = '$shippingtozip4'";
 
-    	$getrateadjust = $wpdb->get_row($sql,ARRAY_A);
+      $getrateadjust = $wpdb->get_row($sql,ARRAY_A);
 
         if ($wpdb->num_rows == 0) {
 
-	        $dest_rateperc = 0;
+          $dest_rateperc = 0;
 
-			$dest_match = 0;
+      $dest_match = 0;
 
-		} else {
+    } else {
 
-	    	$dest_rateperc = $getrateadjust['RatePerc'];
+        $dest_rateperc = $getrateadjust['RatePerc'];
 
-			$destcity = $getrateadjust['nearcity'];
+      $destcity = $getrateadjust['nearcity'];
 
-			$dest_match = 1;
+      $dest_match = 1;
 
-		}
+    }
 
     }
 
@@ -2961,43 +2961,43 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
         $sql = "select addon,nearcity,RatePerc_$currdistance as RatePerc from ziprateadjust where partialzip = '$shippingtozip3'";
 
-    	$getrateadjust = $wpdb->get_row($sql,ARRAY_A);
+      $getrateadjust = $wpdb->get_row($sql,ARRAY_A);
 
         if ($wpdb->num_rows == 0) {
 
-	        $dest_rateperc = 0;
+          $dest_rateperc = 0;
 
-			$dest_match = 0;
+      $dest_match = 0;
 
-		} else {
+    } else {
 
-	    	$dest_rateperc = $getrateadjust['RatePerc'];
+        $dest_rateperc = $getrateadjust['RatePerc'];
 
-			$destcity = $getrateadjust['nearcity'];
+      $destcity = $getrateadjust['nearcity'];
 
-			$dest_match = 1;
+      $dest_match = 1;
 
-		}
+    }
 
     }
 
 
 
-	//5. Figure the price based on the rate adjustments and save it as totalprice2
+  //5. Figure the price based on the rate adjustments and save it as totalprice2
 
 
 
 
 
-	$totalprice2 = $totalprice1 + ($totalprice1 * ($origin_rateperc/100));
+  $totalprice2 = $totalprice1 + ($totalprice1 * ($origin_rateperc/100));
 
-	$price_postoriginrate = $totalprice2;
+  $price_postoriginrate = $totalprice2;
 
-	$totalprice2 = $totalprice2 + ($totalprice2 * ($dest_rateperc/100));
+  $totalprice2 = $totalprice2 + ($totalprice2 * ($dest_rateperc/100));
 
     $price_postdestrate = $totalprice2;
 
-	
+  
 
 
 
@@ -3005,199 +3005,199 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
 
 
-	//8. STATE OVERRIDE: Get the originrateperc rates for the origin and destination states
+  //8. STATE OVERRIDE: Get the originrateperc rates for the origin and destination states
 
-	$sql = "select OriginRatePerc_$currdistance as OriginRatePerc from states where state = '$startstate'";
+  $sql = "select OriginRatePerc_$currdistance as OriginRatePerc from states where state = '$startstate'";
 
-	$getoriginstate = $wpdb->get_row($sql,ARRAY_A);
+  $getoriginstate = $wpdb->get_row($sql,ARRAY_A);
 
-	if ($wpdb->num_rows == 0) {
+  if ($wpdb->num_rows == 0) {
 
         $originrateadjust2 = 0;
 
-	} else {
+  } else {
 
-    	if (is_null($getoriginstate['OriginRatePerc'])) {
+      if (is_null($getoriginstate['OriginRatePerc'])) {
 
-			$originrateadjust2 = 0;
+      $originrateadjust2 = 0;
 
-		} else {
+    } else {
 
-		    $originrateadjust2 = $getoriginstate['OriginRatePerc'];
+        $originrateadjust2 = $getoriginstate['OriginRatePerc'];
 
-		}
+    }
 
-	}
+  }
 
-    	
+      
 
 
 
-	$sql = "select DestRatePerc_$currdistance as DestRatePerc from states where state = '$endstate'";
+  $sql = "select DestRatePerc_$currdistance as DestRatePerc from states where state = '$endstate'";
 
-	$getdeststate = $wpdb->get_row($sql,ARRAY_A);
+  $getdeststate = $wpdb->get_row($sql,ARRAY_A);
 
-	if ($wpdb->num_rows == 0) {
+  if ($wpdb->num_rows == 0) {
 
         $destrateadjust2 = 0;
 
-	} else {
+  } else {
 
-    	if (is_null($getdeststate['DestRatePerc'])) {
+      if (is_null($getdeststate['DestRatePerc'])) {
 
-			$destrateadjust2 = 0;
+      $destrateadjust2 = 0;
 
-		} else {
+    } else {
 
-		    $destrateadjust2 = $getdeststate['DestRatePerc'];
+        $destrateadjust2 = $getdeststate['DestRatePerc'];
 
-		}
+    }
 
-	}
+  }
 
-	
+  
 
-	//Prevent double discounts
+  //Prevent double discounts
 
-	if ($originrateadjust2 < 0 && $destrateadjust2 < 0) {
+  if ($originrateadjust2 < 0 && $destrateadjust2 < 0) {
 
-    	if($originrateadjust2 < $destrateadjust2) {
+      if($originrateadjust2 < $destrateadjust2) {
 
-        	$destrateadjust2 = $destrateadjust2 / 2;
+          $destrateadjust2 = $destrateadjust2 / 2;
 
-    	} else {
+      } else {
 
-        	$originrateadjust2 = $originrateadjust2 / 2;
+          $originrateadjust2 = $originrateadjust2 / 2;
 
-    	}
+      }
 
-	}
+  }
 
 
 
-  	//Apply State Override Rate
+    //Apply State Override Rate
 
-	$totalprice2 = $totalprice2 + ($totalprice2 * ($originrateadjust2/100));
+  $totalprice2 = $totalprice2 + ($totalprice2 * ($originrateadjust2/100));
 
-	$price_postoriginstate = $totalprice2;
+  $price_postoriginstate = $totalprice2;
 
-	$totalprice2 = $totalprice2 + ($totalprice2 * ($destrateadjust2/100));
+  $totalprice2 = $totalprice2 + ($totalprice2 * ($destrateadjust2/100));
 
-	$price_postdeststate = $totalprice2;
+  $price_postdeststate = $totalprice2;
 
-	
+  
 
-	$price_postoriginstate = number_format($price_postoriginstate,2, '.', '');
+  $price_postoriginstate = number_format($price_postoriginstate,2, '.', '');
 
-	$price_postdeststate = number_format($price_postdeststate,2, '.', '');
+  $price_postdeststate = number_format($price_postdeststate,2, '.', '');
 
-	
+  
 
 
 
     //SPECIAL CICRUMSTANCES - special routes
 
-	$sql = "select adjustment from states_specialcircumstance where state_orig = '$startstate' and state_dest = '$endstate'";
+  $sql = "select adjustment from states_specialcircumstance where state_orig = '$startstate' and state_dest = '$endstate'";
 
-	$getspecialcirc = $wpdb->get_row($sql,ARRAY_A);
+  $getspecialcirc = $wpdb->get_row($sql,ARRAY_A);
 
-	if ($wpdb->num_rows == 0) {
+  if ($wpdb->num_rows == 0) {
 
         $specialcircumstance_adjust = 0;
 
-	} else {
+  } else {
 
-    	$specialcircumstance_adjust = $getspecialcirc['adjustment'];
+      $specialcircumstance_adjust = $getspecialcirc['adjustment'];
 
     }
 
-	  
+    
 
     //Apply Special Circumstances
 
-	$totalprice2 = $totalprice2 * (1+($specialcircumstance_adjust/100));
+  $totalprice2 = $totalprice2 * (1+($specialcircumstance_adjust/100));
 
-	$price_poststatecirc = $totalprice2;
+  $price_poststatecirc = $totalprice2;
 
-	$price_poststatecirc = number_format($price_poststatecirc,2, '.', '');
+  $price_poststatecirc = number_format($price_poststatecirc,2, '.', '');
 
 
 
-	//Apply the tier multiplier
+  //Apply the tier multiplier
 
-	$tierrate_std = 0;
+  $tierrate_std = 0;
 
-	$tierrate_exp = 1.18;
+  $tierrate_exp = 1.18;
 
-	$tierrate_rush = 1.29;
+  $tierrate_rush = 1.29;
 
 
 
-	$totalprice2_std = $totalprice2 + $tierrate_std;
+  $totalprice2_std = $totalprice2 + $tierrate_std;
 
-	$totalprice2_exp = ($totalprice2 * $tierrate_exp)+50;
+  $totalprice2_exp = ($totalprice2 * $tierrate_exp)+50;
 
-	$totalprice2_rush = ($totalprice2 * $tierrate_rush)+75;
+  $totalprice2_rush = ($totalprice2 * $tierrate_rush)+75;
 
-	
+  
 
-	
+  
 
-	$price_posttierrate_std = $totalprice2_std;
+  $price_posttierrate_std = $totalprice2_std;
 
-	$price_posttierrate_exp = $totalprice2_exp;
+  $price_posttierrate_exp = $totalprice2_exp;
 
-	$price_posttierrate_rush = $totalprice2_rush;
+  $price_posttierrate_rush = $totalprice2_rush;
 
 
 
-	$price_posttierrate_std = number_format($price_posttierrate_std,2, '.', '');
+  $price_posttierrate_std = number_format($price_posttierrate_std,2, '.', '');
 
-	$price_posttierrate_exp = number_format($price_posttierrate_exp,2, '.', '');
+  $price_posttierrate_exp = number_format($price_posttierrate_exp,2, '.', '');
 
-	$price_posttierrate_rush = number_format($price_posttierrate_rush,2, '.', '');
+  $price_posttierrate_rush = number_format($price_posttierrate_rush,2, '.', '');
 
 
 
 
 
-	//Add enclosure rates if applicable
+  //Add enclosure rates if applicable
 
-	$enclosurerate = 0;
+  $enclosurerate = 0;
 
-	if ($enclosed == "1") {
+  if ($enclosed == "1") {
 
-		$enclosurerate_std = $totalprice2_std * .60;
+    $enclosurerate_std = $totalprice2_std * .60;
 
-		$enclosurerate_exp = $totalprice2_exp * .60;
+    $enclosurerate_exp = $totalprice2_exp * .60;
 
-		$enclosurerate_rush = $totalprice2_rush * .60;
+    $enclosurerate_rush = $totalprice2_rush * .60;
 
-		$totalprice2_std = $totalprice2_std + $enclosurerate_std;
+    $totalprice2_std = $totalprice2_std + $enclosurerate_std;
 
-		$totalprice2_exp = $totalprice2_exp + $enclosurerate_exp;
+    $totalprice2_exp = $totalprice2_exp + $enclosurerate_exp;
 
-		$totalprice2_rush = $totalprice2_rush + $enclosurerate_rush;
+    $totalprice2_rush = $totalprice2_rush + $enclosurerate_rush;
 
-	}
+  }
 
 
 
 
 
-	//10. Round the rate to the next $25 increment
+  //10. Round the rate to the next $25 increment
 
-	$totalprice2_std = roundUpToAny($totalprice2_std);
+  $totalprice2_std = roundUpToAny($totalprice2_std);
 
-	$totalprice2_exp = roundUpToAny($totalprice2_exp);
+  $totalprice2_exp = roundUpToAny($totalprice2_exp);
 
-	$totalprice2_rush = roundUpToAny($totalprice2_rush);
+  $totalprice2_rush = roundUpToAny($totalprice2_rush);
 
-	$roundedtotal_std = $totalprice2_std;
+  $roundedtotal_std = $totalprice2_std;
 
-	$roundedtotal_exp = $totalprice2_exp;
+  $roundedtotal_exp = $totalprice2_exp;
 
-	$roundedtotal_rush = $totalprice2_rush;
+  $roundedtotal_rush = $totalprice2_rush;
 
 
 
@@ -3205,27 +3205,27 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
 
 
-	//12. Setup session variables for the "near" origin and destination cities.
+  //12. Setup session variables for the "near" origin and destination cities.
 
-	if (empty($origincity)) {
+  if (empty($origincity)) {
 
-		$_SESSION['nearorigincity'] = "";
+    $_SESSION['nearorigincity'] = "";
 
-	} else {
+  } else {
 
-		$_SESSION['nearorigincity'] = $origincity;
+    $_SESSION['nearorigincity'] = $origincity;
 
-	}
+  }
 
-	if (empty($destcity)) {
+  if (empty($destcity)) {
 
-		$_SESSION['neardestcity'] = "";
+    $_SESSION['neardestcity'] = "";
 
-	} else {
+  } else {
 
-		$_SESSION['neardestcity'] = $destcity;
+    $_SESSION['neardestcity'] = $destcity;
 
-	}
+  }
 
 
 
@@ -3245,13 +3245,13 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
 
 
-	//13. Add the deposit to the quote
+  //13. Add the deposit to the quote
 
-	$totalprice2_std = $totalprice2_std + $DEATDeposit_std;
+  $totalprice2_std = $totalprice2_std + $DEATDeposit_std;
 
-	$totalprice2_exp = $totalprice2_exp + $DEATDeposit_exp;
+  $totalprice2_exp = $totalprice2_exp + $DEATDeposit_exp;
 
-	$totalprice2_rush = $totalprice2_rush + $DEATDeposit_rush;
+  $totalprice2_rush = $totalprice2_rush + $DEATDeposit_rush;
 
 
 
@@ -3259,99 +3259,99 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
     //$debug="1";
 
-	//15 Print debug info to the screen
+  //15 Print debug info to the screen
 
-	if ($debug == "1") {
-
-
-
-		$url = "http://www.centraldispatch.com/protected/listing-search/result?pickupAreas%5B%5D=state_USA_$startstatevirgin&pickupRadius=25&pickupCity=&pickupState=&pickupZip=&Origination_valid=1&deliveryAreas%5B%5D=state_USA_$endstatevirgin&deliveryRadius=25&deliveryCity=&deliveryState=&deliveryZip=&Destination_valid=1&vehicleTypeIds%5B%5D=4&trailerType=Open&vehiclesRun=1&minVehicles=1&maxVehicles=1&shipWithin=60&paymentType=&minPayPrice=&minPayPerMile=&highlightPeriod=0&listingsPerPage=500&postedBy=&primarySort=1&secondarySort=4";
+  if ($debug == "1") {
 
 
 
-
-
-		
-
-		echo "<hr style='margin:0;'>start zip: $shippingfromzip<br>";
-
-		echo "end zip: $shippingtozip<br><br>";
-
-		echo "startstate: $startstate<br>";
-
-		echo "endstate: $endstate<br><br>";
+    $url = "http://www.centraldispatch.com/protected/listing-search/result?pickupAreas%5B%5D=state_USA_$startstatevirgin&pickupRadius=25&pickupCity=&pickupState=&pickupZip=&Origination_valid=1&deliveryAreas%5B%5D=state_USA_$endstatevirgin&deliveryRadius=25&deliveryCity=&deliveryState=&deliveryZip=&Destination_valid=1&vehicleTypeIds%5B%5D=4&trailerType=Open&vehiclesRun=1&minVehicles=1&maxVehicles=1&shipWithin=60&paymentType=&minPayPrice=&minPayPerMile=&highlightPeriod=0&listingsPerPage=500&postedBy=&primarySort=1&secondarySort=4";
 
 
 
-		echo "<a href='$url' target='_new'><b>CD LINK</b></a><br><br>";
+
+
+    
+
+    echo "<hr style='margin:0;'>start zip: $shippingfromzip<br>";
+
+    echo "end zip: $shippingtozip<br><br>";
+
+    echo "startstate: $startstate<br>";
+
+    echo "endstate: $endstate<br><br>";
 
 
 
-		echo "Total Distance: $totaldistance Miles<br>";
-
-		echo "flat rate: $flatrate<br>";
-
-		echo "by mile rate: $bymilerate<br>";
-
-		echo "<b>totalprice0: $totalprice0(before multiplier)</b><br><br>";
+    echo "<a href='$url' target='_new'><b>CD LINK</b></a><br><br>";
 
 
 
-		echo "auto multiplier: $auto_priceadjustment<br>";
+    echo "Total Distance: $totaldistance Miles<br>";
 
-		echo "auto addon: $auto_addon<br>";
+    echo "flat rate: $flatrate<br>";
 
-		echo "year multiplier: $year_multiplier<br>";
+    echo "by mile rate: $bymilerate<br>";
 
-		echo "year flat rate low: $year_flatrate_low<br>";
-
-		echo "year flat rate high: $year_flatrate_high<br>";
-
-		echo "<b>totalprice1: $totalprice1</b> (after multipliers, before zip code adjustment)<br><br>";
+    echo "<b>totalprice0: $totalprice0(before multiplier)</b><br><br>";
 
 
 
-		echo "<b>currdistance: " . $currdistance . "</b><br><br>";
+    echo "auto multiplier: $auto_priceadjustment<br>";
 
-		
+    echo "auto addon: $auto_addon<br>";
 
-		echo "origin_rateperc: $origin_rateperc<br>";
+    echo "year multiplier: $year_multiplier<br>";
 
-		echo "<b>price_postoriginaddon: $price_postoriginrate</b> (after origin zip code add on)<br><br>";
+    echo "year flat rate low: $year_flatrate_low<br>";
 
+    echo "year flat rate high: $year_flatrate_high<br>";
 
-
-		echo "dest_rateperc: $dest_rateperc<br>";
-
-		echo "<b>price_postdestaddon: $price_postdestrate</b> (after destination zip code add on)<br><br>";
+    echo "<b>totalprice1: $totalprice1</b> (after multipliers, before zip code adjustment)<br><br>";
 
 
 
- 		echo "originrateadjust2 (state override): $originrateadjust2";
+    echo "<b>currdistance: " . $currdistance . "</b><br><br>";
 
- 		if (!empty($staterateadjustmsg)) {
+    
 
- 		   echo " / (Override Not Eligible)";
+    echo "origin_rateperc: $origin_rateperc<br>";
 
- 		}
+    echo "<b>price_postoriginaddon: $price_postoriginrate</b> (after origin zip code add on)<br><br>";
 
- 		echo "<br>";
 
-		echo "<b>price_postoriginstate: $price_postoriginstate</b> (after origin state adjustment)<br><br>";
 
-		
+    echo "dest_rateperc: $dest_rateperc<br>";
 
-		echo "destrateadjust2 (state override): $destrateadjust2";
+    echo "<b>price_postdestaddon: $price_postdestrate</b> (after destination zip code add on)<br><br>";
 
-		if (!empty($staterateadjustmsg)) {
 
- 		   echo " / (Override Not Eligible)";
 
- 		}
+     echo "originrateadjust2 (state override): $originrateadjust2";
 
- 		echo "<br>";
+     if (!empty($staterateadjustmsg)) {
 
-		echo "<b>price_postdeststate: $price_postdeststate</b> (after destination state adjustment)<br><br>";
+        echo " / (Override Not Eligible)";
+
+     }
+
+     echo "<br>";
+
+    echo "<b>price_postoriginstate: $price_postoriginstate</b> (after origin state adjustment)<br><br>";
+
+    
+
+    echo "destrateadjust2 (state override): $destrateadjust2";
+
+    if (!empty($staterateadjustmsg)) {
+
+        echo " / (Override Not Eligible)";
+
+     }
+
+     echo "<br>";
+
+    echo "<b>price_postdeststate: $price_postdeststate</b> (after destination state adjustment)<br><br>";
 
 
 
@@ -3359,81 +3359,79 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
         echo "specialcircumstance_adjust: $specialcircumstance_adjust<br>";
 
-		echo "<b>price_poststatecirc: $price_poststatecirc</b> (after special circumstance add on)<br><br>";
+    echo "<b>price_poststatecirc: $price_poststatecirc</b> (after special circumstance add on)<br><br>";
 
-		
+    
 
-	
+  
 
-		$tiername="Standard";
+    $tiername="Standard";
 
-		$tiercolor="#ead1db";
+    $tiercolor="#ead1db";
 
         echo "<div style='display:inline-block;background-color:$tiercolor'><strong>Tier: $tiername</strong></div><br>";
 
-		echo "tierrate_std: $tierrate_std<br>";
+    echo "tierrate_std: $tierrate_std<br>";
 
-		echo "<b>price_posttierrate_std: $price_posttierrate_std</b> (after tier rate add on)<br>";
-
-
-
-		echo "Add-on for enclosed trailer (enclosurerate_std): $enclosurerate_std<br>";
-
-		echo "<b>roundedtotal_std: $roundedtotal_std</b> (Round UP to the next $25)<br>";
-
-		echo "DEATDeposit_std: $DEATDeposit_std<br>";
-
-		echo "<div style='display:inline-block;background-color:$tiercolor'><b>totalprice2_std: $totalprice2_std</b> (after origin/dest adjustment and $" . $DEATDeposit_std . " deposit)</div><br><br>";
+    echo "<b>price_posttierrate_std: $price_posttierrate_std</b> (after tier rate add on)<br>";
 
 
 
+    echo "Add-on for enclosed trailer (enclosurerate_std): $enclosurerate_std<br>";
+
+    echo "<b>roundedtotal_std: $roundedtotal_std</b> (Round UP to the next $25)<br>";
+
+    echo "DEATDeposit_std: $DEATDeposit_std<br>";
+
+    echo "<div style='display:inline-block;background-color:$tiercolor'><b>totalprice2_std: $totalprice2_std</b> (after origin/dest adjustment and $" . $DEATDeposit_std . " deposit)</div><br><br>";
 
 
-		$tiername="Expedited";
-
-		$tiercolor="#01ff00";	
-
-		echo "<div style='display:inline-block;background-color:$tiercolor'><strong>Tier: $tiername</strong></div><br>";
-
-		echo "tierrate_exp: $tierrate_exp<br>";
-
-		echo "<b>price_posttierrate_exp: $price_posttierrate_exp</b> (after tier rate add on)<br>";
-
-		
-
-		echo "Add-on for enclosed trailer (enclosurerate_exp): $enclosurerate_exp<br>";
-
-		echo "<b>roundedtotal_exp: $roundedtotal_exp</b> (Round UP to the next $25)<br>";
-
-		echo "DEATDeposit_exp: $DEATDeposit_exp<br>";
-
-		echo "<div style='display:inline-block;background-color:$tiercolor'><b>totalprice2_exp: $totalprice2_exp</b> (after origin/dest adjustment and $" . $DEATDeposit_exp . " deposit)</div><br><br>";
-
-	
-
-	
-
-		$tiername="Rush";
-
-		$tiercolor="#ffff00";
-
-		echo "<div style='display:inline-block;background-color:$tiercolor'><strong>Tier: $tiername</strong></div><br>";
-
-		echo "tierrate_rush: $tierrate_rush<br>";
-
-		echo "<b>price_posttierrate_rush: $price_posttierrate_rush</b> (after tier rate add on)<br>";
-
-		
-
-		echo "Add-on for enclosed trailer (enclosurerate_rush): $enclosurerate_rush<br>";
-
-		echo "<b>roundedtotal_rush: $roundedtotal_rush</b> (Round UP to the next $25)<br>";
-
-		echo "DEATDeposit_rush: $DEATDeposit_rush<br>";
-
-		echo "<div style='display:inline-block;background-color:$tiercolor'><b>totalprice2_rush: $totalprice2_rush</b> (after origin/dest adjustment and $" . $DEATDeposit_rush . " deposit)</div><hr>";
 
 
+
+    $tiername="Expedited";
+
+    $tiercolor="#01ff00";	
+
+    echo "<div style='display:inline-block;background-color:$tiercolor'><strong>Tier: $tiername</strong></div><br>";
+
+    echo "tierrate_exp: $tierrate_exp<br>";
+
+    echo "<b>price_posttierrate_exp: $price_posttierrate_exp</b> (after tier rate add on)<br>";
+
+    
+
+    echo "Add-on for enclosed trailer (enclosurerate_exp): $enclosurerate_exp<br>";
+
+    echo "<b>roundedtotal_exp: $roundedtotal_exp</b> (Round UP to the next $25)<br>";
+
+    echo "DEATDeposit_exp: $DEATDeposit_exp<br>";
+
+    echo "<div style='display:inline-block;background-color:$tiercolor'><b>totalprice2_exp: $totalprice2_exp</b> (after origin/dest adjustment and $" . $DEATDeposit_exp . " deposit)</div><br><br>";
+
+  
+
+  
+
+    $tiername="Rush";
+
+    $tiercolor="#ffff00";
+
+    echo "<div style='display:inline-block;background-color:$tiercolor'><strong>Tier: $tiername</strong></div><br>";
+
+    echo "tierrate_rush: $tierrate_rush<br>";
+
+    echo "<b>price_posttierrate_rush: $price_posttierrate_rush</b> (after tier rate add on)<br>";
+
+    
+
+    echo "Add-on for enclosed trailer (enclosurerate_rush): $enclosurerate_rush<br>";
+
+    echo "<b>roundedtotal_rush: $roundedtotal_rush</b> (Round UP to the next $25)<br>";
+
+    echo "DEATDeposit_rush: $DEATDeposit_rush<br>";
+
+    echo "<div style='display:inline-block;background-color:$tiercolor'><b>totalprice2_rush: $totalprice2_rush</b> (after origin/dest adjustment and $" . $DEATDeposit_rush . " deposit)</div><hr>";
 
 
 
@@ -3441,17 +3439,20 @@ function QuoteCalc16($shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjust
 
 
 
-		echo "</div>";
 
-	}
+
+    echo "</div>";
+
+  }
 
 
 
     //Return total price.
 
-	return "$roundedtotal_std|$DEATDeposit_std|$totalprice2_std|$roundedtotal_exp|$DEATDeposit_exp|$totalprice2_exp|$roundedtotal_rush|$DEATDeposit_rush|$totalprice2_rush";
+  return "$roundedtotal_std|$DEATDeposit_std|$totalprice2_std|$roundedtotal_exp|$DEATDeposit_exp|$totalprice2_exp|$roundedtotal_rush|$DEATDeposit_rush|$totalprice2_rush";
 
 }
+
 
     
 

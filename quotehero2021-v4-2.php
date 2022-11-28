@@ -694,7 +694,7 @@ function ShowMessage(title,message) {
 <div class="quotemultiple-zzz">
 	<div class="quoteform">
 		<div class="smart-forms">
-			<form action="/pws-quote/?step=2" method="post" name="autotransportquoteform" id="autotransportquoteform">
+			<form action="/quote-tiers/?step=1c" method="post" name="autotransportquoteform" id="autotransportquoteform">
 					<input type="hidden" name="clearsession" value="<?php echo $clearsession; ?>">
 					<input type="hidden" name="auto_make_index">
 					<input type="hidden" name="auto_model_index">
@@ -839,7 +839,7 @@ function ShowMessage(title,message) {
 				
 						<div class="quote-form-header">
 							<img class="alignleft friendly-face" src="<?php echo site_url(); ?>/wp-content/themes/atdv2/images/friendly-face-300x200.jpg"/>
-							 <h2>Get An Instant Quote Now!</h2> 
+							 <h1 style="font-size: 40px; color: #0057b1;">Get An Instant Quote Now!</h1> 
 							 <p>No Payment Required to Book Your Vehicle Shipment.</p>							 
 						</div>
 						<?php if(isset($_GET['e'])): ?>
@@ -914,7 +914,7 @@ function ShowMessage(title,message) {
 						</div>
 					</div>
 									<div class="tem_btn">
-							<input type="button" id="submit-quote" value="Continue to Car Shipping Vehicles →" tabindex="0" class="submitquotev2" style="cursor: pointer;"/>
+							<input type="button" id="submit-quote" value="Continue →" tabindex="0" class="form-button submitquotev2" style="cursor: pointer;"/>
 						</div>
 					
 					</div>
@@ -1008,7 +1008,7 @@ function ShowMessage(title,message) {
 			</div>
 				<div class="frm-row" id="final_btn">
 				<div class="colm colm12">
-					<input type="button" onclick="submitquote();" value="Get my auto transport quote now →" class="submitquotev2 black" />
+					<input type="button" onclick="submitquote();" value="Continue →" class="submitquotev2 black form-button" style="margin-top: 25px;" />
 					<input id="final-submit-quote" type="submit"/>
 				</div>
 				</div>

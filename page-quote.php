@@ -5,6 +5,7 @@
 get_header(); 
 
 $step = $_GET['step'];
+
 if($step == '7')
 {
 ?>
@@ -27,6 +28,7 @@ if($step == '7')
                                 	    the_content();
                                     } elseif ($_GET['step']=='2') {
                                         //Show detail page
+                                   
                                         include($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/atdv2/quote-2.php');
                                     } elseif ($_GET['step']=='3') {
                                         //Show detail page

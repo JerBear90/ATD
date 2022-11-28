@@ -8,12 +8,8 @@ $getOrderInfoinit = $_COOKIE['OrderInfo'];
 $getOrderInfo = json_decode($getOrderInfoinit);
 	
 $CurrentUsername = $_COOKIE['rep'];
-/*echo '<pre>';
-print_r($_COOKIE);
-echo '</pre>';
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';*/
+
+
 //Check Banned IPs & GUIDs
 $currentip = GetIP();
 $banned = CheckBan($currentip,$guid);
@@ -21,7 +17,6 @@ if ($banned == "1") {
     redirect('https://www.staging.autotransportdirect.com/?quoteerror=limit'); 
 }
 // $pic = $_GET['pic'];
-
 
 $DateAvailable = postdb('DateAvailable');
 $shippingnextseven = postdb('shippingnextseven');
@@ -51,9 +46,6 @@ $auto_make = postdb('auto_make');
 $auto_model = postdb('auto_model');
 $vehicle_operational = postdb('vehicle_operational');
 $vehicle_trailer = postdb('vehicle_trailer');
-
-
-
 
 $howmany = postdb('howmany');
 $numvehicles = postdb('numvehicles');
@@ -367,7 +359,7 @@ body.page-id-21054 {
 	
 </style>
 
-<form action="?step=1" method="post" name="mainform" id="mainform" target="_top">
+<form action="?step=3" method="post" name="mainform" id="mainform" target="_top">
 <input type="hidden" name="shippingfromzip" value="<?php echo $shippingfromzip ?>">
 <input type="hidden" name="shippingfromcity" value="<?php echo $shippingfromcity ?>">
 <input type="hidden" name="shippingfromstate" value="<?php echo $shippingfromstate ?>">
@@ -402,6 +394,5 @@ body.page-id-21054 {
 
 </form>
 <script language="JavaScript">
-	console.log('quote-2 temp');
 document.mainform.submit();
 </script>

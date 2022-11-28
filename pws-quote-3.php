@@ -7,8 +7,8 @@ print_r($_COOKIE);
 echo '</pre>';
 echo '<pre>';
 print_r($_SESSION);
-echo '</pre>'; */
-   
+echo '</pre>';
+*/
 $CurrentUsername = $_COOKIE['rep'];
 
 $qid = postdb('qid');
@@ -156,9 +156,8 @@ if ($_SESSION['intquote'] == 1) {
 }
 
 
-
 if ($howmany == "onevehicle") {
-//	echo 'Auto Year '.$auto_year.'Auto Make => '.$auto_make.' Auto Model => '.$auto_model.' SFZ => '.$shippingfromzip.' STZ => '.$shippingtozip.' Enclosed => '.$enclosed.' AP => '.$auto_priceadjustment.' Debug => '.$debug;
+	//echo 'Auto Year '.$auto_year.'Auto Make => '.$auto_make.' Auto Model => '.$auto_model.' SFZ => '.$shippingfromzip.' STZ => '.$shippingtozip.' Enclosed => '.$enclosed.' AP => '.$auto_priceadjustment.' Debug => '.$debug;
 	$quoteresponse = GetQuote16($auto_year,$auto_make,$auto_model,$shippingfromzip,$shippingtozip,$enclosed,$auto_priceadjustment,$debug);
 
 	$quoteresponse_explode = explode("|", $quoteresponse);
@@ -521,442 +520,6 @@ if ($wpdb->num_rows != 0) {
 </script>
 
 <style type="text/css">
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
-
-.right-banner
-{
-    text-align:center;
-}
-
-.right-banner img
-{
-    width: 75%;
-    border-radius: 20px;
-}
-
-.inner_container
-{
-        display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 40px;
-}
-
-.point1
-{
-    background-color: orange;
-    border-radius: 50px;
-    padding: 8px 29px;
-    text-align: center;
-    color: #fff;
-    font-weight: 400;
-    font-size: 18px;
-    margin-bottom: 20px;
-    display: inline;
-}
-
-
-.banner {
-    width: 100%;
-    display: flex;
-    /*height: 657px;*/
-    height: 370px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.sec1 {
-    width: 100%;
-    background-color: #f1f1f1;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.spn{
-
-    font-size: 12px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    color: #333;
-    margin: 20px 0 10px;
-}
-
-
-.sec2 {
-    background-image: url(https://www.autotransportdirect.com/wp-content/uploads/2022/07/getquotebanner1.jpg);
-    width: 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display:none;
-}
-
-.but{
-    font-size: 15px;
-    border: 1px solid rgb(255 255 255);
-    font-weight: 700;
-    color: rgb(255 255 255);
-    padding: 18px 57px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 35px;
-    border-radius: 43px;
-    display:none;
-}
-
-.but:hover
-{
-    color: #0b9519;
-    text-decoration: none;
-    background-color: #fff;
-    transition: inherit;
-}
-
-.head{
-
-    font-size: 3.5vw;
-    font-weight: 300;
-    color: #333;
-    line-height: 66px;
-    margin: 0px;
-}
-
-.textpara{
-    font-size: 18px;
-    color: #333;
-    font-weight: 400;
-    margin-top: 20px;
-    line-height: 28px;
-    letter-spacing: normal;
-    margin: 20px 0px 0px 0px;
-}
-
-
-
-.sec1 .display
-{
-        padding: 0 17%;
-}
-
-.section.operations
-{
-    padding-top: 80px;
-    padding-bottom: 20px;
-}
-
-.hours_oper
-{
-     text-align: center;
-    color: #283337;
-    font-family: "Helvetica", Sans-serif;
-    font-size: 42px;
-    font-weight: 500;
-    line-height: 45px;
-    margin-bottom: 20px !important;
-    padding-bottom: 0px;
-}
-
-.hours, .cards
-{
-    text-align: center;
-}
-
-.cards_img
-{
-    text-align: center;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 40%;
-    margin: 20px auto 0 auto;
-    grid-column-gap: 30px;
-    align-items: center;
-}
-
-
-.bottom_sec_main
-{
-    background-color: #f1f1f1;
-    padding-top: 40px;
-    padding-bottom: 30px;
-}
-
-.bottom_sec
-{
-    width: 90%;
-    margin: 20px auto;
-}
-
-.bottom_sec_inner
-{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 30px;
-}
-
-.bottom_services
-{
-    background-color: #f3f3f3;
-    padding: 30px 0;
-}
-
-.inner_Serv
-{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-
-.inner_Serv div
-{
-    font-weight: 500;
-    font-family: "Helvetica", Sans-serif;
-    text-align: center;
-    font-size: 20px;
-    letter-spacing: .5px;
-}
-
-.sec .spn 
-{
-    margin-bottom: 3px;
-    font-size: 20px;
-    color:#fff;
-}
-
-.sec h1.head 
-{
-    margin-top: 0px;
-
-     font-size: 50px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #fff !important;
-}
-
-.sec .para
-{
-     font-size: 20px;
-    color: #fff;
-}
-
-
-
-.custom-separator
-{
-    width: 5rem;
-    height: 6px;
-    border-radius: 1rem;
-  background-color: #333;
-    margin: 0 auto 30px auto;
-}
-
-.custom-separator.bg-bas
-{
-     background-color: #487BCA;
-}
-
-.custom-separator.bg-rec
-{
-     background-color: #F1661E;
-}
-
-.custom-separator.bg-fin
-{
-     background-color: #5E9D36;
-}
-
-
-.logos-sectio
-{
-	margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.logos-sectio h2
-{
-    text-align: center;
-    color: #283337;
-    font-family: "Helvetica", Sans-serif;
-    font-size: 42px;
-    font-weight: 500;
-    line-height: 45px;
-    margin-bottom: 0px !important;
-        padding-bottom: 0px;
-}
-
-.logos-sectio .logos_inner
-{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 40px;
-    align-items: center;
-    width: 60%;
-    margin: 55px auto 30px auto;
-}
-
-.logos-sectio .logos_inner .log
-{
-    text-align: center;
-}
-
-.logos-sectio .logos_inner .log img
-{
-	width:55%;
-}
-
-
-.section-head
-{
-    color: #283337;
-    font-family: "Helvetica", Sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 45px;
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-head-main
-{
-    /*margin: 20px 0 10px;
-    background-color: #f1f1f1;
-    padding: 25px;*/
-}
-
-.package_section
-{
-    float: left;
-    width: 100%;
-    margin-top: 0px;
-    padding-top: 80px;
-    padding-bottom: 65px;
-   /* background: #00B4DB;
-    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
-    background: linear-gradient(to right, #0083B0, #00B4DB);*/
-    background: #1b73e79e;
-}
-
-.package_section .levelofservice.recommend 
-{
-    border-top: 5px solid #F1661E;
-    padding-top: 40px !important;
-    margin-top: -25px;
-}
-
-.package_section .levelofservice
-{
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-    background-color: #fff!important;
-}
-
-
-.pricerow1
-{
-    color: #0b9519;
-    font-weight: 300;
-    font-family: "Helvetica", Sans-serif;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-}
-
-.pricerow
-{
-    color: #514B64;
-    margin-top: 8px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    font-family: "Helvetica", Sans-serif;
-    font-size: 30px;
-}
-
-.sectionn_note
-{
-    float: left;
-    margin-top: 35px;
-    color: #fff;
-    font-size: 16px;
-    letter-spacing: .5px;
-    text-align: center;
-    font-weight: 400;
-    font-family: "Helvetica", sans-serif;
-    font-size: 20px;
-    line-height: 25px;
-}
-
-p.hours 
-{
-    font-size: 16px;
-    font-weight: 500;
-    font-family: "Helvetica", sans-serif;
-}
-
-
-
-.colm.colm12.shippinginfodata {
-    font-family: "Helvetica", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-.colm.colm12.shippinginfodata strong {
-    border-bottom: 1px solid #BEBEBE;
-    padding: 3px;
-    line-height: 26px;
-}
-
-div#shipping_more_details {
-    background-image: url(https://www.autotransportdirect.com/wp-content/uploads/2022/07/map-location.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    object-fit: cover;
-    background-position: right;
-    margin-bottom:0px;
-}
-
-#displaybalancestandard , #displayexpeditedprice , #displayexpeditedprice
-{
-    color: #514B64;
-    margin-top: 45px;
-    margin-bottom: 30px;
-    font-size: 65px;
-    font-family: "Playfair Display", Sans-serif;
-}
-
-.p_description p {
-    color: #514B64;
-    font-family: "Helvetica", Sans-serif;
-    margin-bottom: 0px;
-    /* text-align: left; */
-    font-size: 16px;
-}
-
-.due_div
-{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    /* font-family: "Helvetica", Sans-serif; */
-    color: #514B64;
-    font-size: 20px;
-}
-
-
-#map1, #map2 {
-    margin: 10px 0 10px 0;
-    border: 1px solid #666;
-    width: 100%;
-    height: 220px;
-}
-.mapmsg {
-	width: 100%;
-	margin-bottom: 10px;
-	color: #000099;
-	font-size: 15px;
-}
-
-.ui-widget-overlay {
-	opacity: 0.6;
-}
 
 <?php 
 if($_COOKIE['admin']=="") {
@@ -970,185 +533,8 @@ if($_COOKIE['admin']=="") {
 
 
 
-.setupship {
-    margin-top: 10px;
-
-/*     padding: 50px 0 0; */
-}
-
-.setupshipcol {
-	text-align: center;
-    font-size: 16px;
-    padding: 0px 40px !important;
-/*     border-right: 1px solid #eee; */
-}
-
-/*
-.setupshipcol:first-child {
-	border-left: 1px solid #eee;
-}
-*/
-
-.setupship {
-	text-align: center;
-}
-
-.pricerow {
-    /*font-size: 23px;*/
-    line-height: 15px;
-}
-
-.setupshipcol p {
-    margin: 10px 0 !important;
-}
-
-.setupshipment {
-    margin: 3px 0 0 0;
-    font-weight: bold;
-}
-
-.submitbutton3 {
-	/*background: #FFCC00;
-    border-radius: 5px;
-    color: #000 !important;
-    font-family: "Aldrich", Sans-serif !important;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 18px;
-    border: 0;
-    padding: 8px 40px;*/
-    
-    color: #333 !important;
-    background-color: orange;
-       border: 2px solid #cf8601;
-    font-size: 14px;
-    font-family: "Helvetica", Sans-serif !important;
-    border-radius: 50px;
-    letter-spacing: .5px;
-    width: auto !important;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 8px 40px;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-}
-
-.submitbutton3:hover {
-	background: #0b9519 !important;
-	border: 2px solid #05640e;
-	color:#fff !important;
-}
-
-.levelofservice {
-   padding: 20px 20px 25px 20px  !important;
-    background: #333;
-    margin: 0 8px;
-    width: 32% !important;
-    text-align: center;
-    font-size: 14px;
-    color: #f1f1f1;
-    font-weight: 400;
-    border-radius: 20px;
-}
-
-
-
-.levelofservice:last-child {
-	margin-right: 0 !important
-}
-
-.levelofservice:first-child {
-	margin-left: 0 !important
-}
-
-.pricing {
-	color: #424242;
-	font-size:40px;
-	line-height: 50px;
-	font-weight: 400;
-}
-
-.pricing sup {
-	font-size: 50%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-	top: -0.7em;
-	color: #0b9519;
-}
-
-
-@media (max-width: 600px) {
-	.smart-forms .frm-row .colm {
-		width: 100% !important;
-	}
-	
-	.levelofservice:last-child {
-		margin-right: 0 !important
-	}
-	
-	.levelofservice:first-child {
-		margin-left: 0 !important
-	}
-	
-	.levelofservice {
-		margin: 0 0 20px;
-	}
-	
-	body .shippinginfo {
-		margin: 0 !important;
-	}
-}
-
-
-.carinfo {
-	max-width: 538px;
-	border: 1px solid #cecece;
-    padding: 3rem;
-    border-radius: 5px;
-	
-/*
-	border: 0.1rem solid #e6e7eb;
-    border-radius: 0.3rem;
-    box-shadow: 0 0.2rem 0.4rem 0 #9d9ea3;
-    box-shadow: 0 0.2rem 0.4rem 0 rgba(0,0,0,0.06);
-    
-    background: #f3f4f8;
-*/
-}
-
-.shippinginfodata {
-	margin-bottom: 13px;
-}
-
-a.quote-btn {
-    color: #fff !important;
-    background-color: #0062cc;
-    border: 2px solid #03468f;
-    font-size: 14px;
-    font-family: "Helvetica", Sans-serif !important;
-    border-radius: 50px;
-    letter-spacing: .5px;
-    width: auto !important;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 8px 40px;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-    display: block;
-    margin-bottom: 10px;
-}
-
-@media (max-width:768px) {
-
-	.smart-forms .frm-row .colm.ipad {
-		width:100%;
-		float:none;
-		padding:0;
-	}
-	
-}	
-
 </style>
-
+<link rel="stylesheet" type="text/css" href="https://staging.autotransportdirect.com/wp-content/themes/atdv2/pws-quote-3.css">
 
 <!--<div class="banner">
 
@@ -1172,55 +558,11 @@ a.quote-btn {
 </div>-->
 
 
-<div class="banner">
-        <div class="sec1">
-            <div class="container">
-                <div class="inner_container">
-				
-				<div class="left_banner">	
-               <!-- <div class="point">
-			
-                    <div class="point1"><i class="fa fa-arrow-right" style="font-weight: 700;font-size: 14px;margin-right: 10px;"></i> Step One</div>
-                </div>-->
-                
-                <p class="spn">The Car Shipping Experts</p>
-                    <h1 class="head">Your Quote</h1>
-                    <p class="textpara">Direct Express Auto Transport’s no personal information car shipping cost calculator has been the best since 2004.</p>
-                    <a href="tel:800-600-3750" class="but">CALL US</a>
-					</div>
-					
-					<div class="right-banner">
-					<img src="https://www.autotransportdirect.com/wp-content/uploads/2022/07/car-hauler-2-1280x852-1-clr-1-min.jpg" alt="" />
-					</div>
-					
-                </div>    
-            </div>
-        </div>
-
-        <div class="sec2">
-            <!-- <img src="img/banner.jpg"> -->
-        </div>
-    </div>
-
-
 
 <div class="quotecontents">
 
     <div class="smart-forms">
     
-		<!----top steps---->
-    	<!--<div class="section fieldentry" style="margin: 50px 0 30px;">
-	       
-		    <div class="frm-row">
-	        
-			    <div class="colm ipad colm12 ordersteps" style="text-align: center">
-	                <img src="/wp-content/themes/atdv2/images/checkout-prog-1.png" alt="Step 1 - Your Quote" />
-	            </div>
-	           
-
-	        </div>
-	    </div>-->
-	    
 		
         <?php if($vehicletype == "Oversize Vehicles" || $vehicletype == "Other") { ?>
             <div class="section fieldentry">
@@ -1251,7 +593,7 @@ a.quote-btn {
 			
 			.shippinginfo .shippinginfodata.head {
 			    font-weight: 500;
-                font-family: "Helvetica", Sans-serif;
+                font-family: "Poppins", Sans-serif;
                 text-align: center;
                 font-size: 42px;
                 line-height: 40px;
@@ -1264,7 +606,7 @@ a.quote-btn {
                 border-radius: 1rem;
                 width: 15rem;
                 height: 2px;
-                background-color: #487BCA;
+                background-color: #0057b1;
                 margin: 20px auto 30px auto;
     
 			}
@@ -1281,12 +623,12 @@ a.quote-btn {
 			
 
 		    
-		    <div class="section fieldentry">
-			
+		    <div class="fieldentry">
+				
 				<!-----package---->
 				<div class="frm-row" style="margin-bottom:0px !important;">
 		            <div class="colm colm12 ">
-						<form action="?step=4#customer_process" method="post" name="mainform">
+						<form action="?step=2#customer-info" method="post" name="mainform">
 			            <input type="hidden" name="strQuote_shippingfromstateabbr" value="<?php echo $shippingfromstateabbr ?>">
 			            <input type="hidden" name="strQuote_shippingtostateabbr" value="<?php echo $shippingtostateabbr ?>">
 			            <input type="hidden" name="strQuote_shippingfromstate" value="<?php echo $shippingfromstatedisp ?>">
@@ -1479,6 +821,8 @@ a.quote-btn {
 			            </script>
 			
 			            <div class="package_section" id="package_main">
+	            			<h1 class="head">Choose Your Rate</h1>
+
 		                <div class="section fieldentry container">
 		                    
 	                        <?php
@@ -1517,7 +861,7 @@ a.quote-btn {
 								 </div>
 								 
 	                            <div align="center">
-									<button id="confirmLink1" class="submitbutton3">Set&#8209;up Standard Shipment</button>
+									<button id="confirmLink1" class="submitbutton3">Setup Standard Shipment</button>
 								</div>
 	                           <!-- <p style="margin-top: 10px;">
 									Once your order is assigned a carrier, a nominal partial payment will be charged to the credit card, and the majority carrier balance will be due in Cash or Money Order upon delivery
@@ -1547,7 +891,7 @@ a.quote-btn {
 								  
 	                            <div align="center">
 									
-									<button  id="confirmLink2" class="submitbutton3">Set&#8209;up Expedited Shipment</button>
+									<button  id="confirmLink2" class="submitbutton3">Setup Expedited Shipment</button>
 								
 								</div>
 	                            <!--<p style="margin-top: 10px;">
@@ -1576,7 +920,7 @@ a.quote-btn {
 							 	 
 							 	 
 	                         <div align="center">
-								<button id="confirmLink3" class="submitbutton3">Set&#8209;up Rush Shipment</button>
+								<button id="confirmLink3" class="submitbutton3">Setup Rush Shipment</button>
 							</div>
 	                            <!--<p style="margin-top: 10px;">
 									Once your order is assigned a carrier, a nominal partial payment will be charged to the credit card, and the majority carrier balance will be due in Cash or Money Order upon delivery
@@ -1595,21 +939,7 @@ a.quote-btn {
 		                
 		        </div>
             	</div>
-		        <div class="bottom_services">
-                    
-				<div class="container">
-				
-					<div class="inner_Serv">
-				
-                        <div>Door-to-Door Service.</div>
-						<div>Insurance Up To $100,000 Included</div>
-						<div>No taxes or hidden fees.</div>
-                   
-				     </div>
-				   
-				   </div>
-				   
-            </div>
+		    
 				 <!----Order details---->
             	<div class="section fieldentry" id="shipping_more_details" >  
 				     
@@ -1621,42 +951,67 @@ a.quote-btn {
 							
 	                            <div class="shippinginfodata head">
 									My Order Details
-									
 	                            </div>
 	                            <div class="custom_bord"></div>
 	                        
 							</div>
 		                        
 	                        <div class="frm-row">
-	                            <div class="colm colm4">
+	                            <div class="wb_col colm colm8" style="margin-right: 16% !important;margin-left: 16% !important;">
+	                            	<div class="card-container">
+	                            		<div class="colm colm12">
+											<h2 class="shipping-details-header">Shipping Details</h2>
+										</div>
+								<div class="frm-row">									
+										<div class="colm colm12 shippinginfodata">
 
-								<div class="frm-row">
+											<div class="colm colm6">
+												Transport Carrier Type:
+											</div>
+											<div class="colm colm6">
+												<div class="text-right">
+													<strong><?php echo $vehicle_trailer ?></strong>
+												</div>	
+											</div>
+										</div>
+		                       		
 		                            <div class="colm colm12 shippinginfodata">
-		                            	Shipping From: 
-										<strong><?php echo $shippingfromcity ?>, <?php echo $shippingfromstateabbr ?>&nbsp;&nbsp;&nbsp;<?php echo $shippingfromzip ?></strong>
-		                                
-		                                <?php if($_COOKIE['admin']!="") { ?>
-		                                    <div>
-		                                    
-		                                    <a href="http://maps.google.com/maps?q=<?php echo urlencode($shippingfromcity) ?>,+<?php echo urlencode($shippingfromstate) ?>+<?php echo urlencode($shippingfromzip) ?>" target="_new">Google Maps</a>
-		                                    <?php
-		                                    $cdpickup = "http://www.centraldispatch.com/protected/listing-search/result?highlightPeriod=0&pickupCitySearch=1&pickupRadius=25&pickupCity=$shippingfromcity&pickupState=$shippingfromstateabbr&pickupZip=$shippingfromzip&Origination_valid=1&deliveryCitySearch=1&deliveryRadius=25&deliveryCity= $shippingtocity&deliveryState=$shippingtostateabbr&deliveryZip=$shippingtozip&Destination_valid=1&postedBy=&minVehicles=1&maxVehicles=&minPay=&minPayType=M&vehiclesRun=&trailerType=&paymentType=&shipWithin=5&primarySort=1&secondarySort=4&listingsPerPage=100";
-		                                    $cdpickup = urlencode($cdpickup);
-		                                    $cdpickupstate = "http://www.centraldispatch.com/protected/listing-search/result?highlightPeriod=0&pickupAreas%5B%5D=state_USA_$shippingfromstateabbr&pickupRadius=25&pickupCity=&pickupState=$shippingfromstateabbr&pickupZip=60048&Origination_valid=1&deliveryAreas%5B%5D=state_USA_$shippingtostateabbr&deliveryRadius=25&deliveryCity=&deliveryState=$shippingtostateabbr&deliveryZip=29118&Destination_valid=1&postedBy=&minVehicles=1&maxVehicles=&minPay=&minPayType=M&vehiclesRun=&trailerType=&paymentType=&shipWithin=5&primarySort=1&secondarySort=4&listingsPerPage=100";
-		                                    $cdpickupstate = urlencode($cdpickupstate);
-		                                    ?>
-		                                    
-		                                	<a href="http://admin.autotransportdirect.com/admin2k7/redir.asp?url=<?php echo $cdpickup ?>&orderid=0&type=centraldispatchsearch" target="_new">CD-City</a>
-		                                	&nbsp;&nbsp;
-		                                	<a href="http://admin.autotransportdirect.com/admin2k7/redir.asp?url=<?php echo $cdpickupstate ?>&orderid=0&type=centraldispatchsearch" target="_new">CD-State</a>
-		                                    </div>
-		                                <?php } ?>                                      
+		                            	<div class="colm colm6">
+		                            		Shipping From: 
+		                            	</div>
+		                            	<div class="colm colm6">
+											<div class="text-right">
+												<strong><?php echo $shippingfromcity ?>, <?php echo $shippingfromstateabbr ?>&nbsp;&nbsp;&nbsp;<?php echo $shippingfromzip ?></strong>
+											</div>
+			                                
+			                                <?php if($_COOKIE['admin']!="") { ?>
+			                                    <div>
+			                                    
+			                                    <a href="http://maps.google.com/maps?q=<?php echo urlencode($shippingfromcity) ?>,+<?php echo urlencode($shippingfromstate) ?>+<?php echo urlencode($shippingfromzip) ?>" target="_new">Google Maps</a>
+			                                    <?php
+			                                    $cdpickup = "http://www.centraldispatch.com/protected/listing-search/result?highlightPeriod=0&pickupCitySearch=1&pickupRadius=25&pickupCity=$shippingfromcity&pickupState=$shippingfromstateabbr&pickupZip=$shippingfromzip&Origination_valid=1&deliveryCitySearch=1&deliveryRadius=25&deliveryCity= $shippingtocity&deliveryState=$shippingtostateabbr&deliveryZip=$shippingtozip&Destination_valid=1&postedBy=&minVehicles=1&maxVehicles=&minPay=&minPayType=M&vehiclesRun=&trailerType=&paymentType=&shipWithin=5&primarySort=1&secondarySort=4&listingsPerPage=100";
+			                                    $cdpickup = urlencode($cdpickup);
+			                                    $cdpickupstate = "http://www.centraldispatch.com/protected/listing-search/result?highlightPeriod=0&pickupAreas%5B%5D=state_USA_$shippingfromstateabbr&pickupRadius=25&pickupCity=&pickupState=$shippingfromstateabbr&pickupZip=60048&Origination_valid=1&deliveryAreas%5B%5D=state_USA_$shippingtostateabbr&deliveryRadius=25&deliveryCity=&deliveryState=$shippingtostateabbr&deliveryZip=29118&Destination_valid=1&postedBy=&minVehicles=1&maxVehicles=&minPay=&minPayType=M&vehiclesRun=&trailerType=&paymentType=&shipWithin=5&primarySort=1&secondarySort=4&listingsPerPage=100";
+			                                    $cdpickupstate = urlencode($cdpickupstate);
+			                                    ?>
+			                                    
+			                                	<a href="http://admin.autotransportdirect.com/admin2k7/redir.asp?url=<?php echo $cdpickup ?>&orderid=0&type=centraldispatchsearch" target="_new">CD-City</a>
+			                                	&nbsp;&nbsp;
+			                                	<a href="http://admin.autotransportdirect.com/admin2k7/redir.asp?url=<?php echo $cdpickupstate ?>&orderid=0&type=centraldispatchsearch" target="_new">CD-State</a>
+			                                    </div>
+			                                <?php } ?>
+			                            </div>                                      
 		                            </div>
                         		</div>
 		                        <div class="frm-row">
 		                            <div class="colm colm12 shippinginfodata">
-		                                Shipping To: 
-										<strong><?php echo $shippingtocity ?>, <?php echo $shippingtostateabbr ?>&nbsp;&nbsp;&nbsp;<?php echo $shippingtozip ?></strong>
+		                            	<div class="colm colm6">		                                		Shipping To:
+		                            	</div> 
+		                            	<div class="colm colm6">
+											<div class="text-right">
+												<strong><?php echo $shippingtocity ?>, <?php echo $shippingtostateabbr ?>&nbsp;&nbsp;&nbsp;<?php echo $shippingtozip ?></strong>
+											</div>
+										</div>
 		                                
 		                                <?php if($_COOKIE['admin']!="") { ?>
 		                                    <div>
@@ -1677,74 +1032,16 @@ a.quote-btn {
 		                            </div>
 		
 		                        </div>
-		                        <div class="frm-row">
-		                        <?php if ($howmany != "onevehicle") { ?>
-		                            <div class="colm colm12 shippinginfodata">
-		                                Types of Vehicles:<br/>
-		                            
-		                            	<div class="numbutton1">1</div><div class="makemodel"><?php echo $auto_year ?> - <?php echo $auto_make ?> - <?php echo $auto_model ?></div><div style="clear:both"></div>
-		                            	<?php if(!empty($auto_make2)) { ?><div class="numbutton1">2</div><div class="makemodel"><?php echo $auto_year2 ?> - <?php echo $auto_make2 ?> - <?php echo $auto_model2 ?></div><div style="clear:both"></div><?php } ?>
-		                            	<?php if(!empty($auto_make3)) { ?><div class="numbutton1">3</div><div class="makemodel"><?php echo $auto_year3 ?> - <?php echo $auto_make3 ?> - <?php echo $auto_model3 ?></div><div style="clear:both"></div><?php } ?>
-		                            	<?php if(!empty($auto_make4)) { ?><div class="numbutton1">4</div><div class="makemodel"><?php echo $auto_year4 ?> - <?php echo $auto_make4 ?> - <?php echo $auto_model4 ?></div><div style="clear:both"></div><?php } ?>
-		                            	<?php if(!empty($auto_make5)) { ?><div class="numbutton1">5</div><div class="makemodel"><?php echo $auto_year5 ?> - <?php echo $auto_make5 ?> - <?php echo $auto_model5 ?></div><div style="clear:both"></div><?php } ?>
-		                            </div>
-		                        <?php } else { ?>
-		                            <div class="colm colm12 shippinginfodata">
-		                                Types of Vehicle: 
-										<strong><?php echo $auto_year ?> - <?php echo $auto_make ?> - <?php echo $auto_model ?></strong>
-		                            </div>
-		                        <?php } ?>
-		                        </div>
-		                        
-		                        <div class="frm-row">
-		                            <div class="colm colm12 shippinginfodata">
-		                                Operating Condition: 
-										<strong><?php echo $vehicle_operational ?> and Rolls, Brakes, Steers</strong>
-		                            </div>
-		                        </div>
-		                        
-		                       
-
-								<!--<div class="frm-row">
-		                            <div class="colm colm12 shippinginfodata">
-		                                Service: 
-										<strong>Door-to-Door / Or as close as possible</strong>
-		                            </div>
-		                        </div>
-
-
-								<div class="frm-row">
-		                            <div class="colm colm12 shippinginfodata">
-		                                Insurance: 
-										<strong>Included Up To $150,000</strong>
-		                            </div>
-		                        </div>-->
-
-	                            </div>
-	                            <!--<div class="colm colm1"></div>-->
-	                            <div class="colm colm5">
-		                            
-			                        
-			                        
-			                        
-			                        <!--<div class="frm-row">
+		                          <div class="frm-row">
 			                            <div class="colm colm12 shippinginfodata">
-			                                Extra Charges: 
-											<strong>No taxes or hidden fees / Driver tips at delivery are nice</strong>
-			                            </div>
-			                        </div>-->
-			                        
-									 <div class="frm-row">
-										<div class="colm colm12 shippinginfodata">
-											Type of Trailer:
-											<strong><?php echo $vehicle_trailer ?></strong>
-										</div>
-		                       		 </div>
-									
-			                        <div class="frm-row">
-			                            <div class="colm colm12 shippinginfodata">
-			                                Route Distance: 
-											<strong><?php echo number_format($totaldistance) ?> miles</strong>
+			                            	<div class="colm colm6 rout_txt">
+			                                	Route Distance: 
+			                                </div>
+			                                <div class="colm colm6">
+												<div class="text-right rout_txt">
+													<strong><?php echo number_format($totaldistance) ?> miles</strong>
+												</div>
+											</div>
 			                            </div>
 			                        </div>
 			                        <?php
@@ -1752,43 +1049,125 @@ a.quote-btn {
 				                    $daysonroad = ceil($daysonroad);
 				                    $daysonroadmax = $daysonroad + 2;  
 				                    ?>
-			                        
 			                        <div class="frm-row">
 			                            <div class="colm colm12 shippinginfodata">
-			                                Typical Transit Time On The Road: 
-											<strong><?php echo $daysonroad ?> to <?php echo $daysonroadmax ?> Days</strong>
+			                                <div class="colm colm6 rout_txt">
+			                                	Usual Transit Time:
+			                                </div> 
+											<div class="colm colm6">
+												<div class="text-right">
+													<strong><?php echo $daysonroad ?> to <?php echo $daysonroadmax ?> Days</strong>
+												</div>
+											</div>
 			                            </div>
 			                        </div>
-									
-									
-									
-									<script>
-										
+									<script>										
 										// Set Item
 										localStorage.setItem("routedistance", "<?php echo number_format($totaldistance) ?>");
 										
 										// Set Item
 										localStorage.setItem("transittime", "<?php echo $daysonroad ?> to <?php echo $daysonroadmax ?>");
-										
-										
 									</script>
 			                        
-			                       <!-- <div class="frm-row">
-			                            <div class="colm colm12 shippinginfodata">
-			                                Due Now: <strong style="color: #1a73e8;">$0 at time of booking</strong><br>
-											Your credit card won’t be charged a partial payment until after we assign your vehicle(s)
+									<div class="frm-row">
+			                         	<div class="colm colm12 shippinginfodata">
+			                         		<div class="colm colm6">
+			                         			Insurance Up to $100K
+			                         		</div>
+			                         		<div class="colm colm6">
+			                         			<div class="text-right">
+			                         				<strong>Included</strong>
+			                         			</div>
+			                         		</div>
+		                         		</div>
+		                         	</div>
+
+		                         	<div class="frm-row">
+			                         	<div class="colm colm12 shippinginfodata">
+			                         		<div class="colm colm6">
+			                         			Service Type
+			                         		</div>
+			                         		<div class="colm colm6">
+			                         			<div class="text-right">
+			                         				<strong>Door-to-door</strong>
+			                         			</div>
+			                         		</div>
+		                         		</div>
+		                         	</div>
+		                         	<div class="frm-row">
+			                         	<div class="colm colm12 shippinginfodata">
+			                         		<div class="colm colm6">
+			                         			Taxes
+			                         		</div>
+			                         		<div class="colm colm6">
+			                         			<div class="text-right">
+			                         				<strong>None</strong>
+			                         			</div>
+			                         		</div>
+		                         		</div>
+		                         	</div>
+
+		                         </div>
+
+
+
+
+		                         <div class="card-container">
+			                         <div class="frm-row">
+			                         	<div class="colm colm12">
+			                         		<h2 class="shipping-details-header">
+			                         			Vehicle Details
+			                         		</h2>
+			                         	</div>
+
+			                    <div class="frm-row">
+		                        <?php if ($howmany != "onevehicle") { ?>
+		                            <div class="colm colm12 shippinginfodata">
+		                            	<div class="colm colm6">
+		                            		Types of Vehicle(s):<br/>
+		                            	</div>
+		                            	<div class="colm colm6">
+			                            	<div class="numbutton1">1</div><div class="makemodel"><?php echo $auto_year ?> - <?php echo $auto_make ?> - <?php echo $auto_model ?></div><div style="clear:both"></div>
+			                            	<?php if(!empty($auto_make2)) { ?><div class="numbutton1">2</div><div class="makemodel"><?php echo $auto_year2 ?> - <?php echo $auto_make2 ?> - <?php echo $auto_model2 ?></div><div style="clear:both"></div><?php } ?>
+			                            	<?php if(!empty($auto_make3)) { ?><div class="numbutton1">3</div><div class="makemodel"><?php echo $auto_year3 ?> - <?php echo $auto_make3 ?> - <?php echo $auto_model3 ?></div><div style="clear:both"></div><?php } ?>
+			                            	<?php if(!empty($auto_make4)) { ?><div class="numbutton1">4</div><div class="makemodel"><?php echo $auto_year4 ?> - <?php echo $auto_make4 ?> - <?php echo $auto_model4 ?></div><div style="clear:both"></div><?php } ?>
+			                            	<?php if(!empty($auto_make5)) { ?><div class="numbutton1">5</div><div class="makemodel"><?php echo $auto_year5 ?> - <?php echo $auto_make5 ?> - <?php echo $auto_model5 ?></div><div style="clear:both"></div><?php } ?>
 			                            </div>
-			                        </div>
-			                        
-			                        <div class="frm-row">
-			                            <div class="colm colm12 shippinginfodata">
-			                                Carrier Fee: 
-											<strong>Paid in Cash or Money Order directly to Carrier Upon Delivery</strong>
-			                            </div>
-			                        </div>-->
+		                            </div>
+		                        <?php } else { ?>
+		                            <div class="colm colm12 shippinginfodata">
+		                            	<div class="colm colm6">
+		                                	Types of Vehicle: 
+		                                </div>
+		                                <div class="colm colm6">
+		                                	<div class="text-right">
+												<strong><?php echo $auto_year ?> - <?php echo $auto_make ?> - <?php echo $auto_model ?></strong>
+											</div>
+										</div>
+		                            </div>
+		                        <?php } ?>
+
+
+
+                                <div class="colm colm12 shippinginfodata">
+                                    <div class="colm colm6">
+                                    	Vehicle Condition: 
+                                    </div>
+    								<div class="colm colm6">
+    									<div class="text-right">
+    										<strong><?php echo $vehicle_operational ?></strong>
+    									</div>
+    								</div>
+                                </div>
+
+		                        </div> 
+		                    </div>
+			                            
+			                    </div>
+			                      
 
 	                            </div>
-	                            <div class="colm colm3">
+	                            <div class="colm colm6" style="display:none">
 		                            <div style="text-align: center;"><img src="//d36b03yirdy1u9.cloudfront.net/images/staff/quote1-2.jpg" style="border-radius: 5px;"></div>
 	                            </div>
 	                        </div>
@@ -1881,13 +1260,7 @@ a.quote-btn {
 						<!--<div class="colm colm1"></div>-->
 	            
 	                    <div class="colm colm5">
-	                    	<style type="text/css">
-	                    	select#honorquoteprice {
-	                    		padding-top: 10px;
-	                    		font-size: 15px;
-	                    		width: 125px;
-	                    	}
-	                    	</style>
+	                    	
 	                    	<div style="font-size:15px; text-align: center; margin-top: 36px;">
 	
 	                        <?php if ($_COOKIE['intquote'] != 1) { ?>
@@ -1912,43 +1285,7 @@ a.quote-btn {
 	                        
 	                        <script language="JavaScript">
 	                        
-	                            function changetrailer() {
-	                            	var currenttrailer = jQuery('#vehicle_trailer').val();
-	                            	if (currenttrailer=='Open') {
-	                            		jQuery('#vehicle_trailer').val('Enclosed');
-	                            	} else {
-	                            		jQuery('#vehicle_trailer').val('Open');
-	                            	}
-	                            	document.getElementById("changequote").submit();
-	                            }
-	                        
-	                            function changeoperating() {
-	                            	var currentcondition = jQuery('#vehicle_operational').val();
-	                            	if (currentcondition=='Running') {
-	                            		jQuery('#vehicle_operational').val('Non-Running');
-	                            	} else {
-	                            		jQuery('#vehicle_operational').val('Running');
-	                            	}
-	                            	document.getElementById("changequote").submit();
-	                            }
-	                            
-	                            function reverselocation() {
-	                            	var current_shippingfromzip = jQuery('#shippingfromzip').val();
-	                            	var current_shippingfromcity = jQuery('#shippingfromcity').val();
-	                            	var current_shippingfromstate = jQuery('#shippingfromstate').val();
-	                            	var current_shippingtozip = jQuery('#shippingtozip').val();
-	                            	var current_shippingtocity = jQuery('#shippingtocity').val();
-	                            	var current_shippingtostate = jQuery('#shippingtostate').val();
-	                                
-	                                jQuery('#shippingfromzip').val(current_shippingtozip);
-	                                jQuery('#shippingfromcity').val(current_shippingtocity);
-	                                jQuery('#shippingfromstate').val(current_shippingtostate);
-	                                jQuery('#shippingtozip').val(current_shippingfromzip);
-	                                jQuery('#shippingtocity').val(current_shippingfromcity);
-	                                jQuery('#shippingtostate').val(current_shippingfromstate);
-	                            	
-	                            	document.getElementById("changequote").submit();
-	                            }
+
 	                        
 	                        
 	                            </script>
@@ -2138,10 +1475,12 @@ a.quote-btn {
 			
 			<!----------admin section---------->
 			
+
+
 			
 			<!---logos section--->
 	    
-	    <div class="frm-row" style="margin: 50px 0 0px; !important">
+	    <div class="frm-row" style="margin: 50px 0 0px;background: #fff!important;padding: 60px 0px;">
 		
 			<div class="logos-sectio">
 			
@@ -2165,34 +1504,20 @@ a.quote-btn {
 				
 		
 			</div>
-		
-		   <!-- <div class="colm colm1"></div>
-            <div class="colm colm6" style="margin: 30px 0 0 0;text-align: center;">
-	            <img src="https://d36b03yirdy1u9.cloudfront.net/wp-content/uploads/2018/09/ratinglogos.png?v=2" /><BR><BR>
-	            <div style="font-size: 20px; line-height: 28px; font-weight: 600 !important;">Direct Express Auto Transport is the highest rated and most reliable car shipper! Going strong since 2004.<div style="margin-top:10px;"></div>
-	            	
-	            </div>
+			 <div class="section-head-main container">
+				
+				<div class="section-head">
+					Direct Express Auto Transport is the highest rated and most reliable car shipper! Going strong since 2004.
+				</div>
+			
+			</div>
+			<div class="colm colm12">
+                    <?php echo do_shortcode('[elementor-template id="76526"]') ?>
             </div>
-          <div class="colm colm1"></div>
-	            
-            <div class="colm colm3">
-	            <div style="text-align: center;"> <img src="//d36b03yirdy1u9.cloudfront.net/images-v3/img8.jpg" style="border-radius: 5px;">
-	            <div style="font-size: 22px; line-height: 28px; color: #1a73e8; font-weight: bold !important; text-align: center; margin-top: 10px;">
-					 $0 Due Now To Book</div>
-            </div>
-            <div class="colm colm1"></div>
-            </div>-->
+
         </div>
 
 	    
-		 <div class="section-head-main container">
-			
-			<div class="section-head">
-				Direct Express Auto Transport is the highest rated and most reliable car shipper! Going strong since 2004.
-			</div>
-		
-		</div>
-		
 		<!---video---->	
 			
 			<div class="bottom_sec_main">
@@ -2203,7 +1528,7 @@ a.quote-btn {
 					
 					<div class="colm colm6">
 					       
-						    <style>.embed-container { border:1px solid #ccc; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+						  
 							
 							<div class='embed-container'><iframe src='https://player.vimeo.com/video/460700109' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 							
@@ -2240,7 +1565,7 @@ a.quote-btn {
 		</div>	
 
                 
-            <div class="section fieldentry operations">
+           <!--  <div class="section fieldentry operations">
                 
                 <div class="frm-row">
 	                
@@ -2279,7 +1604,7 @@ a.quote-btn {
 				
 				
                 
-        	</div>
+        	</div> -->
                             
                                 
 

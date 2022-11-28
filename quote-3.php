@@ -1348,25 +1348,18 @@ if($_COOKIE['admin']=="") {
                     		<strong>OFFICE USE ONLY</strong><br>
                             <?php
                                 
-                            $cd25 = "https://app.centraldispatch.com/search?search=~(l~(~(s~%27Pickup~r~25~c~%27San*20Anselmo~st~%27CA~zC~%2794960~pId~%27ChIJ2cX8c6yXhYARxOLJklYtWDo)~(s~%27Dropoff~r~25~c~%27Manhattan*20Beach~st~%27CA~zC~%2790266~pId~%27ChIJF_3wBvCzwoARgml7tLb4Mus))~rT~%27Open~tLPW~4~sTOT~false~vC~(mn~1)~opt~%27all~ofst~0~lmt~100~sF~(~(n~%27pc~d~%27DESC)~(n~%27dMA~d~%27ASC))~dBS~false~sPSO~false~rTSW~%27all)&sid=a9e4665d-b7ab-466b-afac-30d90bdebb44";
-							$cd25 = urlencode($cd25);
-							
-							$cd50 = "https://app.centraldispatch.com/search?search=~(l~(~(s~%27Pickup~r~50~c~%27San*20Anselmo~st~%27CA~zC~%2794960~pId~%27ChIJ2cX8c6yXhYARxOLJklYtWDo)~(s~%27Dropoff~r~50~c~%27Manhattan*20Beach~st~%27CA~zC~%2790266~pId~%27ChIJF_3wBvCzwoARgml7tLb4Mus))~rT~%27Open~tLPW~4~sTOT~false~vC~(mn~1)~opt~%27all~ofst~0~lmt~100~sF~(~(n~%27pc~d~%27DESC)~(n~%27dMA~d~%27ASC))~dBS~false~sPSO~false~rTSW~%27all)&sid=f3ba5349-8e38-4936-8529-979b2c2e666f";
-							$cd50 = urlencode($cd50);
-							
-							$cd75 = "https://app.centraldispatch.com/search?search=~(vC~(mn~1)~tLPW~4~opt~%27all~ofst~0~lmt~100~sF~(~(n~%27pc~d~%27DESC)~(n~%27dMA~d~%27ASC))~dBS~false~sPSO~false~sTOT~false~rT~%27Open~l~(~(s~%27Pickup~r~75~c~%27San*20Anselmo~st~%27CA~zC~%2794960~pId~%27ChIJ2cX8c6yXhYARxOLJklYtWDo)~(s~%27Dropoff~r~75~c~%27Manhattan*20Beach~st~%27CA~zC~%2790266~pId~%27ChIJF_3wBvCzwoARgml7tLb4Mus)))&sid=7844317a-bfae-497a-aafe-b6771d6c1ca6";
-							$cd75 = urlencode($cd75);
-							
-							$cd100 = "https://app.centraldispatch.com/search?search=~(l~(~(s~%27Pickup~r~100~c~%27San*20Anselmo~st~%27CA~zC~%2794960~pId~%27ChIJ2cX8c6yXhYARxOLJklYtWDo)~(s~%27Dropoff~r~100~c~%27Manhattan*20Beach~st~%27CA~zC~%2790266~pId~%27ChIJF_3wBvCzwoARgml7tLb4Mus))~rT~%27Open~tLPW~4~sTOT~false~vC~(mn~1)~opt~%27all~ofst~0~lmt~100~sF~(~(n~%27pc~d~%27DESC)~(n~%27dMA~d~%27ASC))~dBS~false~sPSO~false~rTSW~%27all)&sid=78674367-7879-44db-b16a-8aecb45d6ba0";
-							$cd100 = urlencode($cd100);
+                            $cd25 = "http://www.centraldispatch.com/protected/listing-search/result?highlightPeriod=0&pickupCitySearch=1&pickupRadius=25&pickupCity=$shippingfromcity&pickupState=$shippingfromstateabbr&pickupZip=$shippingfromzip&Origination_valid=1&deliveryCitySearch=1&deliveryRadius=25&deliveryCity=$shippingtocity&deliveryState=$shippingtostateabbr&deliveryZip=$shippingtozip&Destination_valid=1&vehicleTypeIds%5B%5D=4&vehicleTypeIds%5B%5D=6&vehicleTypeIds%5B%5D=8&vehicleTypeIds%5B%5D=10&postedBy=&minVehicles=1&maxVehicles=&minPay=&minPayType=M&vehiclesRun=&trailerType=&paymentType=&shipWithin=5&primarySort=8&secondarySort=4&listingsPerPage=100";
+                            $cd25 = urlencode($cd25);
+                            $cd50 = "http://www.centraldispatch.com/protected/listing-search/result?highlightPeriod=0&pickupCitySearch=1&pickupRadius=50&pickupCity=$shippingfromcity&pickupState=$shippingfromstateabbr&pickupZip=$shippingfromzip&Origination_valid=1&deliveryCitySearch=1&deliveryRadius=50&deliveryCity=$shippingtocity&deliveryState=$shippingtostateabbr&deliveryZip=$shippingtozip&Destination_valid=1&vehicleTypeIds%5B%5D=4&vehicleTypeIds%5B%5D=6&vehicleTypeIds%5B%5D=8&vehicleTypeIds%5B%5D=10&postedBy=&minVehicles=1&maxVehicles=&minPay=&minPayType=M&vehiclesRun=&trailerType=&paymentType=&shipWithin=5&primarySort=8&secondarySort=4&listingsPerPage=100";
+                            $cd50 = urlencode($cd50);
+                            $cd100 = "http://www.centraldispatch.com/protected/listing-search/result?highlightPeriod=0&pickupCitySearch=1&pickupRadius=100&pickupCity=$shippingfromcity&pickupState=$shippingfromstateabbr&pickupZip=$shippingfromzip&Origination_valid=1&deliveryCitySearch=1&deliveryRadius=100&deliveryCity=$shippingtocity&deliveryState=$shippingtostateabbr&deliveryZip=$shippingtozip&Destination_valid=1&vehicleTypeIds%5B%5D=4&vehicleTypeIds%5B%5D=6&vehicleTypeIds%5B%5D=8&vehicleTypeIds%5B%5D=10&postedBy=&minVehicles=1&maxVehicles=&minPay=&minPayType=M&vehiclesRun=&trailerType=&paymentType=&shipWithin=5&primarySort=8&secondarySort=4&listingsPerPage=100";
+                            $cd100 = urlencode($cd100);
                             ?>
                     
 							<a href="http://admin.autotransportdirect.com/admin2k7/redir.asp?url=<?php echo $cd25 ?>&orderid=0&type=centraldispatchsearch" target="_new">CD-25</a>
                     		&nbsp;&nbsp;
                             <a href="http://admin.autotransportdirect.com/admin2k7/redir.asp?url=<?php echo $cd50 ?>&orderid=0&type=centraldispatchsearch" target="_new">CD-50</a>
                     		&nbsp;&nbsp;
-							<a href="http://admin.autotransportdirect.com/admin2k7/redir.asp?url=<?php echo $cd75 ?>&orderid=0&type=centraldispatchsearch" target="_new">CD-75</a>
-							&nbsp;&nbsp;
                     		<a href="http://admin.autotransportdirect.com/admin2k7/redir.asp?url=<?php echo $cd100 ?>&orderid=0&type=centraldispatchsearch" target="_new">CD-100</a>
                             <br>
                     
